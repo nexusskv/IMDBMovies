@@ -29,24 +29,7 @@ extension MoviesViewController {
         
         return cell ?? UICollectionViewCell()
     }
-    
-      
-    /// ---> Function for processing a received result  <--- ///
-    func handleLoadedResult(_ result: AnyObject) {
-        if result is [MovieObject] {
-            if let movies = result as? [MovieObject] {
-                dataArray            = movies
-                originalDataArray    = movies
 
-                moviesView.reloadData()
-            } else {
-                AlertPresenter.showAlert(self, message: "You received empty data.")
-            }
-        } else if result is String {
-            AlertPresenter.showAlert(self, message: result as! String)
-        }
-    }
-    
     
     /// ---> Function for present details view  <--- ///
     func presentDetails(_ index: Int) {

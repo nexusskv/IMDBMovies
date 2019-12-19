@@ -16,6 +16,7 @@ class Router {
     static func present(_ vc: String, from parent: UIViewController) {
         let storyboard = UIStoryboard(name: vc, bundle: nil)
         let child = storyboard.instantiateViewController(withIdentifier: vc + "ViewController")
+        parent.modalPresentationStyle = .fullScreen
         parent.present(child, animated: true, completion: nil)
     }
     

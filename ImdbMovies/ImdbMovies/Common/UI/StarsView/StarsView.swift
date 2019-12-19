@@ -73,15 +73,3 @@ class StarsView: UIView {
         }
     }
 }
-/*
-float desiredImageWidth = (self.frame.size.width - (_leftMargin*2) - (_midMargin*_starViews.count)) / _starViews.count;
-float imageWidth = MAX(_minStarSize.width, desiredImageWidth);
-float imageHeight = MAX(_minStarSize.height, self.frame.size.height);
-
-for (int i = 0; i < _starViews.count; ++i) {
-    
-    UIImageView *imageView = [_starViews objectAtIndex:i];
-    CGRect imageFrame = CGRectMake(_leftMargin + i*(_midMargin+imageWidth), 0, imageWidth, imageHeight);
-    imageView.frame = imageFrame;
-    
-}*/

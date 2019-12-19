@@ -13,11 +13,18 @@ import UIKit
 class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var detailsTable: UITableView!
     var detailsObject: MovieDetailsObject!
-    var rowsCount = 0
+    var cellTypes = [DetailsTableCells]()
             
     /// ---> View life cycle  <--- ///
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+    }
 
-    }    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadMovieDetails()
+    }
 }

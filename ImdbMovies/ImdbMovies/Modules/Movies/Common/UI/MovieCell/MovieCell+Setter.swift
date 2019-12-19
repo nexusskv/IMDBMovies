@@ -20,15 +20,8 @@ extension MovieCell {
     
     /// ---> Setter for values on UI <--- ///
     func setValues(_ object: MovieObject, index: Int) {
-        let holderImage = UIImage(named: "cinema_holder")
-        
-        if !object.iconPath.isEmpty {
-            let url = iconUrl + object.posterPath
-            posterImageView.loadAsync(url, placeholder: holderImage)
-        } else {
-            posterImageView.image = holderImage
-        }
-        
+        posterImageView.setUrl(object.posterPath)
+
         posterImageView.roundCorners(15.0)
                 
         titleLabel.text     = object.movieTitle
@@ -37,7 +30,7 @@ extension MovieCell {
             dateLabel.text  = date
         }
 
-        ratingView.setMaxRating(10)
+        ratingView.setMaxRating(maxMovieRating)
         ratingView.setRating(Float(object.voteAvg))
         
         movieButton.tag = index

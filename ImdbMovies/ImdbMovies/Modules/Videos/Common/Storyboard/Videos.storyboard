@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eau-56-HmF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Videos View Controller-->
+        <scene sceneID="qNG-2h-juE">
+            <objects>
+                <viewController storyboardIdentifier="VideosViewController" id="Eau-56-HmF" customClass="VideosViewController" customModule="ImdbMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AGz-eL-Ryn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Afd-Gw-8Nn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Gds-1Y-yzk"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Videos list" id="dpf-65-BC7">
+                                        <barButtonItem key="leftBarButtonItem" image="back_icon" id="JeY-Of-ejX"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="e7v-H6-30Z">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="65" id="v7t-UO-Z9L">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v7t-UO-Z9L" id="6be-ln-cbE">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="65"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTK-GT-Uef">
+                                                    <rect key="frame" x="20" y="11" width="335" height="43"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rTK-GT-Uef" secondAttribute="trailing" constant="20" id="M2p-Bd-ooO"/>
+                                                <constraint firstItem="rTK-GT-Uef" firstAttribute="top" secondItem="6be-ln-cbE" secondAttribute="topMargin" id="Y8j-Zf-1JD"/>
+                                                <constraint firstItem="rTK-GT-Uef" firstAttribute="leading" secondItem="6be-ln-cbE" secondAttribute="leadingMargin" id="cGk-PL-qwK"/>
+                                                <constraint firstItem="rTK-GT-Uef" firstAttribute="bottom" secondItem="6be-ln-cbE" secondAttribute="bottomMargin" id="fuT-Cc-Vs4"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="e7v-H6-30Z" firstAttribute="top" secondItem="Afd-Gw-8Nn" secondAttribute="bottom" symbolic="YES" id="0ad-bt-SHH"/>
+                            <constraint firstItem="QIf-MT-2KQ" firstAttribute="trailing" secondItem="e7v-H6-30Z" secondAttribute="trailing" id="2Oi-wk-0FS"/>
+                            <constraint firstItem="Afd-Gw-8Nn" firstAttribute="leading" secondItem="QIf-MT-2KQ" secondAttribute="leading" id="6ck-Rg-DGK"/>
+                            <constraint firstItem="Afd-Gw-8Nn" firstAttribute="trailing" secondItem="QIf-MT-2KQ" secondAttribute="trailing" id="Nhl-AA-pdz"/>
+                            <constraint firstItem="Afd-Gw-8Nn" firstAttribute="top" secondItem="QIf-MT-2KQ" secondAttribute="top" id="Orj-Ic-ui0"/>
+                            <constraint firstItem="QIf-MT-2KQ" firstAttribute="bottom" secondItem="e7v-H6-30Z" secondAttribute="bottom" id="hHL-jJ-G2s"/>
+                            <constraint firstItem="e7v-H6-30Z" firstAttribute="leading" secondItem="QIf-MT-2KQ" secondAttribute="leading" id="sUN-ja-52T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QIf-MT-2KQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Cu-88-hPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="86.956521739130437" y="99.776785714285708"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back_icon" width="40" height="40"/>
+    </resources>
+</document>

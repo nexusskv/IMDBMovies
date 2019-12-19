@@ -18,14 +18,14 @@ class AsyncImageView: UIImageView {
 
     /// ---> Function for download image asyncronously <--- ///
     func loadAsync(_ url: String, placeholder: UIImage?) {
-        let imageURL = url as NSString
-        if let cashedImage = asyncImagesCashArray.object(forKey: imageURL) {
+        let imgUrl = url as NSString
+        if let cashedImage = asyncImagesCashArray.object(forKey: imgUrl) {
             image = cashedImage
             return
         }
         
         image = placeholder
-        currentURL = imageURL
+        currentURL = imgUrl
         
         guard let requestURL = URL(string: url) else { image = placeholder; return }
         
@@ -33,9 +33,9 @@ class AsyncImageView: UIImageView {
             DispatchQueue.main.async { [weak self] in
                 if error == nil {
                     if let imageData = data {
-                        if self?.currentURL == imageURL {
+                        if self?.currentURL == imgUrl {
                             if let imageToPresent = UIImage(data: imageData) {
-                                asyncImagesCashArray.setObject(imageToPresent, forKey: imageURL)
+                                asyncImagesCashArray.setObject(imageToPresent, forKey: imgUrl)
                                 self?.image = imageToPresent
                             } else {
                                 self?.image = placeholder!

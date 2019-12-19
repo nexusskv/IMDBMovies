@@ -19,12 +19,11 @@ extension MovieDetailsViewController: UITableViewDataSource, UITableViewDelegate
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowsCount
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {        
+        return makeRowsCount()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return makeHeight(indexPath.row)
     }
-
 }

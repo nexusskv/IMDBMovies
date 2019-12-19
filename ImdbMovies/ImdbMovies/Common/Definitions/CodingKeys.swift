@@ -54,27 +54,10 @@ enum MovieDetailsCodingKeys: String, CodingKey {
     case popularity
 }
 
-enum CollectionCodingKeys: String, CodingKey {
-    case objectId           = "id"
-    case posterPath         = "poster_path"
-    case iconPath           = "backdrop_path"
-    case name
-}
-
 enum ProdCompanyCodingKeys: String, CodingKey {
     case objectId           = "id"
     case logoPath           = "logo_path"
     case origCountry        = "origin_country"
-    case name
-}
-
-enum ProdCountryCodingKeys: String, CodingKey {
-    case iso_3166_1
-    case name
-}
-
-enum SpokenLangCodingKeys: String, CodingKey {
-    case iso_639_1
     case name
 }
 
@@ -88,7 +71,4 @@ enum VideoCodingKeys: String, CodingKey {
     case key
     case name
     case site
-    case size
-    case type
 }
-
