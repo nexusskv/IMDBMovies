@@ -1,0 +1,87 @@
+//
+//  StarsView.swift
+//  ImdbMovies
+//
+//  Created by Rost on 18.12.2019.
+//  Copyright © 2019 Rost Gress. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+let defaultMaxRating            = 10
+let defaultLeftMargin           = 2
+let defaultMidMargin            = 2
+let defaultRightMargin          = 2
+let defaultMinAllowedRating     = 1
+let defaultMaxAllowedRating     = 10
+let defaultMinStarSize          = CGSize(width: 10, height: 10)
+
+
+class StarsView: UIView {
+    var notSelectedStar: UIImage!
+    var selectedStar: UIImage!
+    var halfSelectedStar: UIImage!
+
+    var maxRating: Int!
+    var leftMargin: Float!
+    var midMargin: Float!
+    var rightMargin: Float!
+    var minStarSize: CGSize!
+    var rating: Float!
+    var minAllowedRating: Float!
+    var maxAllowedRating: Float!
+    var starViews = [UIImageView]()
+
+    /// ---> Constructer function <--- ///
+    required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+
+    }
+    
+    
+    /// ---> View life cycle <--- ///
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupUI()
+    }
+    
+    
+    override init(frame: CGRect) {
+         super.init(frame: frame)
+        
+         setupUI()
+    }
+
+    override func layoutSubviews() {
+         super.layoutSubviews()
+
+        let middle: CGFloat    = CGFloat(midMargin) * CGFloat(starViews.count)
+        let left: CGFloat      = CGFloat(leftMargin * 2.0)
+        let width: CGFloat     = CGFloat(self.frame.size.width)
+        let desiredImageWidth: CGFloat = (width - left - middle) / CGFloat(starViews.count)
+        
+        let imageWidth = max(minStarSize.width, CGFloat(desiredImageWidth))
+        let imageHeight = max(minStarSize.height, self.frame.size.height)
+        
+        for i in 0 ..< starViews.count {
+            let imageView = starViews[i]
+            let xValue = CGFloat(leftMargin) + CGFloat(i) * (CGFloat(midMargin!) + imageWidth)
+            let imageFrame = CGRect(x: xValue, y: 0, width: imageWidth, height: imageHeight)
+            imageView.frame = imageFrame;
+        }
+    }
+}
+/*
+float desiredImageWidth = (self.frame.size.width - (_leftMargin*2) - (_midMargin*_starViews.count)) / _starViews.count;
+float imageWidth = MAX(_minStarSize.width, desiredImageWidth);
+float imageHeight = MAX(_minStarSize.height, self.frame.size.height);
+
+for (int i = 0; i < _starViews.count; ++i) {
+    
+    UIImageView *imageView = [_starViews objectAtIndex:i];
+    CGRect imageFrame = CGRectMake(_leftMargin + i*(_midMargin+imageWidth), 0, imageWidth, imageHeight);
+    imageView.frame = imageFrame;
+    
+}*/
