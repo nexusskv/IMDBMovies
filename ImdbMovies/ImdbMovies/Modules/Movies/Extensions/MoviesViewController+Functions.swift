@@ -24,8 +24,7 @@ extension MoviesViewController {
         let cell = sender.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: index) as? MovieCell
         
         let movie = dataArray[index.item]
-        
-        cell?.setupUI()
+
         cell?.setValues(movie, index: index.item)
         
         return cell ?? UICollectionViewCell()
@@ -50,8 +49,8 @@ extension MoviesViewController {
     
     
     /// ---> Function for present details view  <--- ///
-    func presentDetails(_ index: IndexPath) {
-        let selectedMovie = dataArray[index.row]
+    func presentDetails(_ index: Int) {
+        let selectedMovie = dataArray[index]
         
         DataContainer.shared.selectedMovieId   = selectedMovie.objectId
         

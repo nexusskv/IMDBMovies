@@ -34,17 +34,17 @@
                                 <rect key="frame" x="0.0" y="137" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="829-Dt-Sis">
-                                    <size key="itemSize" width="160" height="249"/>
+                                    <size key="itemSize" width="160" height="257"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MovieCell" id="cUt-hO-Kvn" customClass="MovieCell" customModule="ImdbMovies" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="249"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="257"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2Jy-SO-7N5">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="249"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="160" height="257"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZRw-ZG-pyi" customClass="AsyncImageView" customModule="ImdbMovies" customModuleProvider="target">
@@ -53,17 +53,17 @@
                                                         <constraint firstAttribute="height" constant="170" id="WNN-ep-An2"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvF-H4-ooC">
-                                                    <rect key="frame" x="8" y="193" width="144" height="12"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WvF-H4-ooC">
+                                                    <rect key="frame" x="8" y="188" width="144" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="12" id="mGM-Q3-FJl"/>
+                                                        <constraint firstAttribute="height" constant="30" id="mGM-Q3-FJl"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1K-M9-NIA">
-                                                    <rect key="frame" x="10" y="235" width="140" height="9"/>
+                                                    <rect key="frame" x="10" y="243" width="140" height="9"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="9" id="aPS-Sc-c2g"/>
                                                     </constraints>
@@ -72,14 +72,17 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEC-6Z-SIJ" customClass="StarsView" customModule="ImdbMovies" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="207" width="144" height="15"/>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <rect key="frame" x="8" y="223" width="144" height="15"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="15" id="Qmh-dk-RMK"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtM-Ba-qWu">
                                                     <rect key="frame" x="0.0" y="0.0" width="160" height="249"/>
+                                                    <connections>
+                                                        <action selector="movieButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sg2-4Q-b0Y"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -96,14 +99,15 @@
                                                 <constraint firstAttribute="trailing" secondItem="ZRw-ZG-pyi" secondAttribute="trailing" constant="8" id="VxU-5e-Tnw"/>
                                                 <constraint firstItem="WvF-H4-ooC" firstAttribute="leading" secondItem="2Jy-SO-7N5" secondAttribute="leading" constant="8" id="Z4u-A7-Caa"/>
                                                 <constraint firstItem="P1K-M9-NIA" firstAttribute="leading" secondItem="2Jy-SO-7N5" secondAttribute="leading" constant="10" id="cRL-Rk-1dE"/>
-                                                <constraint firstItem="WvF-H4-ooC" firstAttribute="top" secondItem="ZRw-ZG-pyi" secondAttribute="bottom" constant="15" id="jvj-No-nzx"/>
+                                                <constraint firstItem="WvF-H4-ooC" firstAttribute="top" secondItem="ZRw-ZG-pyi" secondAttribute="bottom" constant="10" id="jvj-No-nzx"/>
                                                 <constraint firstAttribute="trailing" secondItem="JtM-Ba-qWu" secondAttribute="trailing" id="mqH-mr-kUU"/>
-                                                <constraint firstItem="sEC-6Z-SIJ" firstAttribute="top" secondItem="WvF-H4-ooC" secondAttribute="bottom" constant="2" id="slk-yU-btC"/>
+                                                <constraint firstItem="sEC-6Z-SIJ" firstAttribute="top" secondItem="WvF-H4-ooC" secondAttribute="bottom" constant="5" id="slk-yU-btC"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="160" height="249"/>
+                                        <size key="customSize" width="160" height="257"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="P1K-M9-NIA" id="gO8-dF-KwA"/>
+                                            <outlet property="movieButton" destination="JtM-Ba-qWu" id="nha-Gl-v0B"/>
                                             <outlet property="posterImageView" destination="ZRw-ZG-pyi" id="dXR-Lv-OHy"/>
                                             <outlet property="ratingView" destination="sEC-6Z-SIJ" id="kqA-kd-Fhd"/>
                                             <outlet property="titleLabel" destination="WvF-H4-ooC" id="5w2-OU-7eh"/>

@@ -12,6 +12,12 @@ import UIKit
 
 extension MovieCell {
     
+    /// ---> Function for add UI customizations <--- ///
+    func setupUI() {
+        contentView.roundCorners(7, border: 0.4, color: .lightGray)
+    }
+    
+    
     /// ---> Setter for values on UI <--- ///
     func setValues(_ object: MovieObject, index: Int) {
         let holderImage = UIImage(named: "cinema_holder")
@@ -31,9 +37,9 @@ extension MovieCell {
             dateLabel.text  = date
         }
 
-        ratingView.minAllowedRating = 1
-        ratingView.maxAllowedRating = 10
         ratingView.setMaxRating(10)
         ratingView.setRating(Float(object.voteAvg))
+        
+        movieButton.tag = index
     }
 }

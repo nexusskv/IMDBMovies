@@ -17,8 +17,7 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (UIScreen.main.bounds.width / 2.0) - 10.0
-        return CGSize(width: width, height: width + 50.0)
-        //CGSize(width: 160.0, height: 230.0)
+        return CGSize(width: width, height: width + 70.0)
     }
     
     

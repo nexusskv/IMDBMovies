@@ -15,12 +15,15 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingView: StarsView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var movieButton: UIButton!
     
-    /// ---> Function for add UI customizations <--- ///
-    func setupUI() {
-        contentView.roundCorners(7, border: 0.4, color: .lightGray)
+    /// ---> View life cycle <--- ///
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupUI()
     }
-    
+
     
     /// ---> Function set cell by fixed size <--- ///
     override func preferredLayoutAttributesFitting(_ layoutAttributes: UICollectionViewLayoutAttributes)

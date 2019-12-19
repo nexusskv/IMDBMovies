@@ -11,7 +11,9 @@ import UIKit
 
 
 class MovieDetailsViewController: UIViewController {
-
+    @IBOutlet weak var detailsTable: UITableView!
+    var detailsObject: MovieDetailsObject!
+    var rowsCount = 0
             
     /// ---> View life cycle  <--- ///
     override func viewDidLoad() {
