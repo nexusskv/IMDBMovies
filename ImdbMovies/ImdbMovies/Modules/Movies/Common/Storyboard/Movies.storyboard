@@ -123,7 +123,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byb-fL-YFj">
                                 <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Please enter the title of movie" translatesAutoresizingMaskIntoConstraints="NO" id="9L5-Ie-557">
+                                    <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Please enter the title of movie" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9L5-Ie-557">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="alphabet" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>

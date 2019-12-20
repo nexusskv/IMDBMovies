@@ -12,10 +12,10 @@ import Foundation
 class JsonHandler {
     
     /// ---> Function for handle received data <--- ///
-    static func handleData(_ data: Data, type: EndpointsUrls) -> AnyObject {
+    static func handleData(_ data: Data, type: EndpointsTypes) -> AnyObject {
         do {
             switch type {
-                case .movies:
+            case .movies, .search:
                     if let results = handleMovies(data) as? Data {
                         let movies = try JSONDecoder().decode([MovieObject].self, from: results)
                         if movies.count > 0 {

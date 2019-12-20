@@ -93,6 +93,6 @@ extension MoviesViewController {
             sortMovies(DataContainer.shared.selectedSortType)
         }
         
-        moviesView.reloadData()
+        scrollMoviesToTop()
     }
 }

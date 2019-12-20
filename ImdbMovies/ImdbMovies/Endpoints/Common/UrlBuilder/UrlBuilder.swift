@@ -11,8 +11,8 @@ import Foundation
 
 class UrlBuilder {
     
-    static func makeRequest(_ param: String, type: EndpointsUrls) -> URLRequest? {
-        let url = makeEndpointUrl(param, type: type)
+    static func makeRequest(_ param: String, query: String, type: EndpointsTypes) -> URLRequest? {
+        let url = makeEndpointUrl(param, query: query, type: type)
                
         guard let resultUrl = URL(string: url) else {
             print("Error: can't create endpoint URL")
@@ -24,7 +24,7 @@ class UrlBuilder {
         return urlRequest
     }
     
-    static func makeEndpointUrl(_ param: String, type: EndpointsUrls) -> String {
+    static func makeEndpointUrl(_ param: String, query: String, type: EndpointsTypes) -> String {
         var url = ""
         
         switch type {
@@ -34,6 +34,8 @@ class UrlBuilder {
                 url = detailsUrl + "/" + param + "?" + keyLangParam
             case .videosList:
                 url = detailsUrl + "/" + param + "/" + videosParam + "?" + keyLangParam
+            case .search:
+                url = apiUrl + "/" + searchParam + "?" + queryParam + "=" + query + "&" + keyLangPageParam + "=" + "\(param)"
         }
         
         return url

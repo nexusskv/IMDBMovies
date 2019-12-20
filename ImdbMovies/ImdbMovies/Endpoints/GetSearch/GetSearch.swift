@@ -1,19 +1,19 @@
 //
-//  GetMovies.swift
+//  .swift
 //  ImdbMovies
 //
-//  Created by Rost on 17.12.2019.
+//  Created by Rost on 20.12.2019.
 //  Copyright © 2019 Rost Gress. All rights reserved.
 //
 
 import Foundation
 
 
-class GetMovies {
+class GetSearch {
 
     /// ---> Function for load data from API <--- ///
-    static func loadList(_ page: Int, completion: ((_ response: AnyObject) -> Void)?) {
-        if let request = UrlBuilder.makeRequest("\(page)", query: "", type: .movies) {
+    static func loadSearch(_ query: String, page: Int, completion: ((_ response: AnyObject) -> Void)?) {
+        if let request = UrlBuilder.makeRequest("\(page)", query: query, type: .search) {
             let session = UrlBuilder.makeSession()
             
             let task = session.dataTask(with: request,
@@ -27,7 +27,7 @@ class GetMovies {
                 }
                 
                 DispatchQueue.global(qos: .userInitiated).async {
-                    let result = JsonHandler.handleData(data, type: .movies)
+                    let result = JsonHandler.handleData(data, type: .search)
                     
                     DispatchQueue.main.async {
                         completion!(result as AnyObject)

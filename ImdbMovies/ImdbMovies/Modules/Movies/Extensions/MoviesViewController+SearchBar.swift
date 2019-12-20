@@ -13,15 +13,19 @@ import UIKit
 extension MoviesViewController: UISearchBarDelegate {
     
     /// ---> Search bar delegate functions <--- ///
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         handleSearchCancel(searchBar)
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.resignFirstResponder()
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {        
+        handleSearch(searchBar)
     }
-
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        handleSearch(searchText)
+        handleSearchText(searchText, at: searchBar)
     }
 }

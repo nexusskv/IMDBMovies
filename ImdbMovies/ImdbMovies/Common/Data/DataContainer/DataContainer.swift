@@ -24,4 +24,6 @@ class DataContainer {
     
     var homepageUrl: String?            // string url for show home page
     var videoObject: VideosObject?       // object for show video on web page
+    
+    var searchQuery: String?            // String for search movies on API
 }

@@ -13,31 +13,53 @@ import UIKit
 extension MoviesViewController {
     
     /// ---> Function for processing a search string  <--- ///
-    func handleSearch(_ value: String) {
-        if value.count > 0 {
-            dataArray = originalDataArray.filter({ (movie) -> Bool in
-                let title: NSString = movie.movieTitle as NSString
-                let titleRange = title.range(of: value, options: .caseInsensitive)
-                
-                return titleRange.location != NSNotFound
-            })
+    func handleSearch(_ bar: UISearchBar) {
+        if let query = bar.text, query.count > 2 {
+            endSearch(bar)
+            
+            currentPage = 1
+            dataArray   = []
+            
+            DataContainer.shared.searchQuery = query
+            
+            loadSearch(query, page: searchPage)
 
             if DataContainer.shared.selectedSortType != .none {
                 sortMovies(DataContainer.shared.selectedSortType)
             }
         } else {
+            AlertPresenter.showAlert(self, message: "Please enter a title of movie for search.")
             restoreAllMovies()
         }
-
-        moviesView.reloadData()
     }
     
     
     /// ---> Function for processing a search cancel button  <--- ///
     func handleSearchCancel(_ bar: UISearchBar) {
         bar.text = nil
-        bar.resignFirstResponder()
+        
+        endSearch(bar)
+        
+        searchPage                          = 1
+        DataContainer.shared.searchQuery    = nil
         
         restoreAllMovies()
+    }
+    
+    
+    /// ---> Function for processing a search text  <--- ///
+    func handleSearchText(_ text: String, at bar: UISearchBar) {
+        if text.isEmpty {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.endSearch(bar)
+            }
+        }
+    }
+    
+    
+    /// ---> Function for close search  <--- ///
+    func endSearch(_ bar: UISearchBar) {
+        view.endEditing(true)
+        bar.showsCancelButton = false
     }
 }

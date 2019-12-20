@@ -16,6 +16,7 @@ class MoviesViewController: UIViewController {
     var dataArray: [MovieObject] = []
     var originalDataArray: [MovieObject] = []    
     var currentPage = 1
+    var searchPage  = 1
     var cellMargin: CGFloat = 0.0
     var isDataLoading: Bool = false
             

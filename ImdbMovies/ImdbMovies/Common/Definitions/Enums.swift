@@ -21,10 +21,11 @@ enum WebTypes: Int {
     case homepage
 }
 
-enum EndpointsUrls: Int {
+enum EndpointsTypes: Int {
     case movies = 0
     case movieDetails
     case videosList
+    case search
 }
 
 enum MoviesSortTypes: Int {

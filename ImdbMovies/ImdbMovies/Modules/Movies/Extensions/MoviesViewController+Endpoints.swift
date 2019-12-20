@@ -19,37 +19,34 @@ extension MoviesViewController {
               return
             }
             
-            strongSelf.handleLoadedResult(result)
+            strongSelf.handleLoadedResult(result, type: .movies)
+        })
+    }
+
+    
+    func loadSearch(_ query: String, page: Int) {
+        GetSearch.loadSearch(query, page: page, completion: { [weak self] result in
+            guard let strongSelf = self else {
+              return
+            }
+            
+            strongSelf.handleLoadedResult(result, type: .search)
         })
     }
     
     
-    func loadNextPage(_ index: Int) {
-        if index >= dataArray.count - 5 {
-
-            if dataArray.count > 0 && isDataLoading == false {
-                if let total = DataContainer.shared.totalPages {
-                    if currentPage < total {
-                        currentPage += 1
-                        
-                        print(currentPage)
-                        isDataLoading = true
-                        
-                        loadMovies(currentPage)
-                    }
-                }
-            }
-        }
-    }
-    
-    
     /// ---> Function for processing a received result  <--- ///
-    func handleLoadedResult(_ result: AnyObject) {
+    func handleLoadedResult(_ result: AnyObject, type: EndpointsTypes) {
         if result is [MovieObject] {
             if let movies = result as? [MovieObject] {
-                dataArray            += movies
-                originalDataArray    += movies
-
+                if type == .movies {
+                    dataArray            += movies
+                    originalDataArray    += movies
+                    
+                } else if type == .search {
+                    dataArray            += movies
+                }
+                
                 moviesView.reloadData()
             } else {
                 AlertPresenter.showAlert(self, message: "You received empty data.")

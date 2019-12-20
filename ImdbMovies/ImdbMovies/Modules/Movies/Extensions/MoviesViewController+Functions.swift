@@ -39,4 +39,34 @@ extension MoviesViewController {
         
         Router.present("MovieDetails", from: self)
     }
+    
+    
+    /// ---> Function for download next page for list of movies  <--- ///
+    func loadNextPage(_ index: Int) {
+        if index >= dataArray.count - 5 {
+            if dataArray.count > 0 && isDataLoading == false {
+                if let total = DataContainer.shared.totalPages {
+                    if currentPage < total {
+                        isDataLoading = true
+                        
+                        if let search = DataContainer.shared.searchQuery {
+                            searchPage += 1
+
+                            loadSearch(search, page: searchPage)
+                        } else {
+                            currentPage += 1
+
+                            loadMovies(currentPage)
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    /// ---> Function for scroll list of movies to top  <--- ///
+    func scrollMoviesToTop() {
+        moviesView.reloadData()
+        moviesView.setContentOffset(CGPoint(x: 0,y: 0), animated: true)
+    }
 }
