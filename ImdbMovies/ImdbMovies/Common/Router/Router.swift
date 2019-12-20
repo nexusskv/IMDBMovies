@@ -16,13 +16,20 @@ class Router {
     static func present(_ vc: String, from parent: UIViewController) {
         let storyboard = UIStoryboard(name: vc, bundle: nil)
         let child = storyboard.instantiateViewController(withIdentifier: vc + "ViewController")
-        parent.modalPresentationStyle = .fullScreen
-        parent.present(child, animated: true, completion: nil)
+        child.modalPresentationStyle = .fullScreen
+        
+        let transition = makeTransition(.push)
+        parent.view.window!.layer.add(transition, forKey: kCATransition)
+        
+        parent.present(child, animated: false, completion: nil)
     }
     
     
     /// ---> Function remove some view controller from other view controller <--- ///
     static func dismiss(_ vc: UIViewController) {
-        vc.dismiss(animated: true, completion: nil)
+        let transition = makeTransition(.pop)
+        vc.view.window!.layer.add(transition, forKey: kCATransition)
+        
+        vc.dismiss(animated: false, completion: nil)
     }
 }

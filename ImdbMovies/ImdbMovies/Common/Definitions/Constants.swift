@@ -13,8 +13,7 @@ let apiKey          = "301fb81ba21a95f0581119093f49bdaf"
 let apiUrl          = "https://api.themoviedb.org/3"
 let listUrl         = apiUrl + "/" + movieParam + "/" + playingParam
 let detailsUrl      = apiUrl + "/" + movieParam
-let iconUrl         = "https://image.tmdb.org/t/p/w300"
-let imageUrl        = "https://image.tmdb.org/t/p"      // + Size screen
+let imageUrl        = "https://image.tmdb.org/t/p/w300"      // + Size screen
 let youtubeUrl      = "https://www.youtube.com/watch?v" // =KEY_FROM_RESPONCE
 let vimeoUrl        = "https://vimeo.com"   // /KEY
 

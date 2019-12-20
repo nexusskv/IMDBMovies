@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 
 
-class PosterCell: BaseTableCell {
+class PosterCell: BaseDetailsCell {
     @IBOutlet weak var posterImageView: AsyncImageView!
     
     /// ---> Setter for values on UI <--- ///
     override func setDetailsValues(_ object: MovieDetailsObject) {
-        posterImageView.setUrl(object.iconPath)
+        if !object.iconPath.isEmpty {
+            posterImageView.setUrl(object.iconPath)
+        } else {
+           posterImageView.setUrl(object.posterPath)
+        }
     }
 }

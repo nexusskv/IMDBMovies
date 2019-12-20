@@ -15,6 +15,13 @@ class DataContainer {
     
     var allMovies: [MovieObject]?       // List of all movies
     
+    var selectedSortType: MoviesSortTypes = .none           // current type of sort movies
+    
     var selectedMovieId: Int?           // movie id for download details
     var totalPages: Int?                // total pages for download
+    
+    var selectedDetailsId: Int?         // movie id for download list of videos 
+    
+    var homepageUrl: String?            // string url for show home page
+    var videoObject: VideosObject?       // object for show video on web page
 }

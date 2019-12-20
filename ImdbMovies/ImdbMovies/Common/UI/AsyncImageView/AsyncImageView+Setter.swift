@@ -16,7 +16,7 @@ extension AsyncImageView {
         let holderImage = UIImage(named: "cinema_holder")
         
         if !url.isEmpty {
-            let url = iconUrl + url
+            let url = imageUrl + url
             self.loadAsync(url, placeholder: holderImage)
         } else {
             self.image = holderImage

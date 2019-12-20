@@ -10,9 +10,15 @@ import Foundation
 import UIKit
 
 
-enum VideoTypes: Int {
+enum TransitionType: Int {
+    case push = 0
+    case pop
+}
+
+enum WebTypes: Int {
     case youtube = 0
     case vimeo
+    case homepage
 }
 
 enum EndpointsUrls: Int {
@@ -71,7 +77,7 @@ enum DetailsTableCells: Int {
         return PosterCell.self
     }
     
-    func getClass() -> BaseTableCell.Type {
+    func getClass() -> BaseDetailsCell.Type {
         switch self {
             case .poster:
                 return PosterCell.self

@@ -14,12 +14,17 @@ extension JsonHandler {
     static func handleVideos(_ data: Data) -> AnyObject? {
         do {
             if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                if let value = json["results"] as? [[String: AnyObject]] {
-                    guard let results = try? JSONSerialization.data(withJSONObject: value, options: []) else {
+                if let videos = json["results"] as? [[String: AnyObject]] {
+                    if videos.count > 0 {
+                        guard let results = try? JSONSerialization.data(withJSONObject: videos,
+                                                                        options: []) else {
+                            return nil
+                        }
+                        
+                        return results as AnyObject
+                    } else {
                         return nil
                     }
-                    
-                    return results as AnyObject
                 }
             }
         } catch let error as NSError {

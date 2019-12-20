@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 
-class HomepageCell: BaseTableCell {
+class HomepageCell: BaseDetailsCell {
     
 }

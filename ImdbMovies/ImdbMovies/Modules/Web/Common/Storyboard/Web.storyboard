@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zwc-Nc-yml">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Web View Controller-->
+        <scene sceneID="OwH-VF-E4i">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="Zwc-Nc-yml" customClass="WebViewController" customModule="ImdbMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vzQ-IZ-dD3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUM-YO-XHW">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="H19-WT-zpg"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="qvF-YG-iv8">
+                                        <barButtonItem key="leftBarButtonItem" image="back_icon" id="uRC-f5-dO0">
+                                            <connections>
+                                                <action selector="backItemTapped" destination="Zwc-Nc-yml" id="2ag-sE-zwY"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDS-Sq-6WW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mDS-Sq-6WW" firstAttribute="top" secondItem="vUM-YO-XHW" secondAttribute="bottom" symbolic="YES" id="ORs-KG-d41"/>
+                            <constraint firstItem="mDS-Sq-6WW" firstAttribute="bottom" secondItem="w85-Em-bUU" secondAttribute="bottom" id="TBc-AD-4LC"/>
+                            <constraint firstItem="mDS-Sq-6WW" firstAttribute="leading" secondItem="w85-Em-bUU" secondAttribute="leading" id="ZKC-9P-PyP"/>
+                            <constraint firstItem="mDS-Sq-6WW" firstAttribute="trailing" secondItem="w85-Em-bUU" secondAttribute="trailing" id="aqB-HX-r8K"/>
+                            <constraint firstItem="vUM-YO-XHW" firstAttribute="trailing" secondItem="w85-Em-bUU" secondAttribute="trailing" id="dcI-hE-OUO"/>
+                            <constraint firstItem="vUM-YO-XHW" firstAttribute="leading" secondItem="w85-Em-bUU" secondAttribute="leading" id="kme-H1-G9W"/>
+                            <constraint firstItem="vUM-YO-XHW" firstAttribute="top" secondItem="w85-Em-bUU" secondAttribute="top" id="z2k-dJ-NWD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w85-Em-bUU"/>
+                    </view>
+                    <connections>
+                        <outlet property="titleItem" destination="qvF-YG-iv8" id="rH6-jj-lFM"/>
+                        <outlet property="webView" destination="mDS-Sq-6WW" id="QyI-te-z3T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="heQ-nU-2jD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124.6376811594203" y="115.84821428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back_icon" width="40" height="40"/>
+    </resources>
+</document>

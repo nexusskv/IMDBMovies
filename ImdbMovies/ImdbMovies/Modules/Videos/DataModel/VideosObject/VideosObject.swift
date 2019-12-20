@@ -1,5 +1,5 @@
 //
-//  VideoObject.swift
+//  VideosObject.swift
 //  ImdbMovies
 //
 //  Created by Rost on 19.12.2019.
@@ -9,9 +9,9 @@
 import Foundation
 
 
-struct VideoObject {
-    var objectId                = 0
+struct VideosObject {
+    var objectId                = ""
     var videoKey                = ""
     var name                    = ""
-    var videoType: VideoTypes   = .youtube
+    var videoType: WebTypes     = .youtube
 }

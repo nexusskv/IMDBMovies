@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class OverviewCell: BaseTableCell {
+class OverviewCell: BaseDetailsCell {
     @IBOutlet weak var overTextView: UITextView!
     
     /// ---> View life cycle <--- ///

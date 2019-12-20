@@ -22,7 +22,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Videos list" id="dpf-65-BC7">
-                                        <barButtonItem key="leftBarButtonItem" image="back_icon" id="JeY-Of-ejX"/>
+                                        <barButtonItem key="leftBarButtonItem" image="back_icon" id="JeY-Of-ejX">
+                                            <connections>
+                                                <action selector="backItemTapped" destination="Eau-56-HmF" id="XSN-Ws-Jc4"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -30,15 +34,15 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VideoCell" rowHeight="65" id="v7t-UO-Z9L">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="65"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VideosCell" rowHeight="66" id="v7t-UO-Z9L" customClass="VideosCell" customModule="ImdbMovies" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v7t-UO-Z9L" id="6be-ln-cbE">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="66"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rTK-GT-Uef">
-                                                    <rect key="frame" x="20" y="11" width="335" height="43"/>
+                                                    <rect key="frame" x="20" y="11" width="335" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -51,8 +55,15 @@
                                                 <constraint firstItem="rTK-GT-Uef" firstAttribute="bottom" secondItem="6be-ln-cbE" secondAttribute="bottomMargin" id="fuT-Cc-Vs4"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoTitle" destination="rTK-GT-Uef" id="J61-zM-ZUb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Eau-56-HmF" id="HNN-de-jiP"/>
+                                    <outlet property="delegate" destination="Eau-56-HmF" id="fY3-Tb-49f"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -67,6 +78,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QIf-MT-2KQ"/>
                     </view>
+                    <connections>
+                        <outlet property="videosTable" destination="e7v-H6-30Z" id="i2O-Ze-jxx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Cu-88-hPd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

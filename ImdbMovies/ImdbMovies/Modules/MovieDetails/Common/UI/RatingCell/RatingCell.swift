@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class RatingCell: BaseTableCell {
+class RatingCell: BaseDetailsCell {
     @IBOutlet weak var ratingView: StarsView!
     
     /// ---> Setter for values on UI <--- ///

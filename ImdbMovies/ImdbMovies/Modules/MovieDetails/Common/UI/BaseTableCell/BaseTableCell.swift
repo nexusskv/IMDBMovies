@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class BaseTableCell: UITableViewCell {
+class BaseDetailsCell: UITableViewCell {
     
     func setDetailsValues(_ object: MovieDetailsObject) { }
 }

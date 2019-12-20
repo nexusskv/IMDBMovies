@@ -21,9 +21,9 @@ extension MoviesViewController {
                 
                 return titleRange.location != NSNotFound
             })
-            
-            if selectedSortType != .none {
-                sortMovies(selectedSortType)
+
+            if DataContainer.shared.selectedSortType != .none {
+                sortMovies(DataContainer.shared.selectedSortType)
             }
         } else {
             restoreAllMovies()

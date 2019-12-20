@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class GenresCell: BaseTableCell {
+class GenresCell: BaseDetailsCell {
     @IBOutlet weak var genresLabel: UILabel!
         
     /// ---> Setter for values on UI <--- ///

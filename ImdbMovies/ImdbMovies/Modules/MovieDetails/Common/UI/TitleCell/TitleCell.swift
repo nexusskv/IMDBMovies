@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 
-class TitleCell: BaseTableCell {
+class TitleCell: BaseDetailsCell {
     @IBOutlet weak var movieTitle: UILabel!
         
     /// ---> Setter for values on UI <--- ///

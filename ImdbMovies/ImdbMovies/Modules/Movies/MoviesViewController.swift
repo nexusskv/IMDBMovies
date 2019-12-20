@@ -14,10 +14,10 @@ class MoviesViewController: UIViewController {
     @IBOutlet weak var moviesView: UICollectionView!
     @IBOutlet weak var sortView: SortView!
     var dataArray: [MovieObject] = []
-    var originalDataArray: [MovieObject] = []
-    var selectedSortType: MoviesSortTypes = .none
+    var originalDataArray: [MovieObject] = []    
     var currentPage = 1
     var cellMargin: CGFloat = 0.0
+    var isDataLoading: Bool = false
             
     /// ---> View life cycle  <--- ///
     override func viewDidLoad() {

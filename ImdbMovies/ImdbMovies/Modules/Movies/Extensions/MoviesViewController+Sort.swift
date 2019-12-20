@@ -18,7 +18,7 @@ extension MoviesViewController {
             sortView.fadeOut()
         } else {
             sortView.fadeIn()
-            sortView.addCheckmarks(sortView.sortType)
+            sortView.sortTable.reloadData()
         }
     }
     
@@ -26,11 +26,7 @@ extension MoviesViewController {
     /// ---> Function for processing a select sort buttons  <--- ///
     func sortActionHandler(_ value: Int) {
         if let type = MoviesSortTypes(rawValue: value) {
-            sortView.cleanCheckmarks()
-            
-            sortView.addCheckmarks(type)
-            
-            selectedSortType = type
+            sortView.currentSort = type
         }
     }
     
@@ -40,19 +36,17 @@ extension MoviesViewController {
         if let type = ConfirmActionsTypes(rawValue: value) {
             switch type {
                 case .cancel:
-                   sortView.fadeOut()
-                   sortView.cleanCheckmarks()
-                   selectedSortType = .none
+                    sortView.currentSort = .none
+                    sortView.fadeOut()
                 case .ok:
-                    if selectedSortType == .none {
+                    if sortView.currentSort == .none {
                             AlertPresenter.showAlert(self,
-                                                     message: "Please select ascending or descending type for sort companies. \n For hide this dialog just tap by X button.")
+                                                     message: "Please select ascending or descending type for sort movies. \n For hide this dialog just tap by X button.")
                     } else {
-                            sortView.fadeOut()                            
-                            sortMovies(selectedSortType)
+                        DataContainer.shared.selectedSortType = sortView.currentSort
+                        sortView.fadeOut()
+                        sortMovies(DataContainer.shared.selectedSortType)
                     }
-                
-                    sortView.sortType = selectedSortType
             }
         }
     }
@@ -60,27 +54,29 @@ extension MoviesViewController {
     
     /// ---> Function for processing a sort data by selected type  <--- ///
     func sortMovies(_ type: MoviesSortTypes) {
+        let sortArray = dataArray
+        
         switch type {
             case .dateAsc:
-                dataArray = dataArray.sorted(by: { $0.releaseDate < $1.releaseDate })
+                dataArray = sortArray.sorted(by: { $0.releaseDate < $1.releaseDate })
             case .dateDesc:
-                dataArray = dataArray.sorted(by: { $0.releaseDate > $1.releaseDate })
+                dataArray = sortArray.sorted(by: { $0.releaseDate > $1.releaseDate })
             case .titleAsc:
-                dataArray = dataArray.sorted(by: { $0.movieTitle < $1.movieTitle })
+                dataArray = sortArray.sorted(by: { $0.movieTitle < $1.movieTitle })
             case .titleDesc:
-                dataArray = dataArray.sorted(by: { $0.movieTitle > $1.movieTitle })
+                dataArray = sortArray.sorted(by: { $0.movieTitle > $1.movieTitle })
             case .popularAsc:
-                dataArray = dataArray.sorted(by: { $0.popularity < $1.popularity })
+                dataArray = sortArray.sorted(by: { $0.popularity < $1.popularity })
             case .popularDesc:
-                dataArray = dataArray.sorted(by: { $0.popularity > $1.popularity })
+                dataArray = sortArray.sorted(by: { $0.popularity > $1.popularity })
             case .voteCountAsc:
-                dataArray = dataArray.sorted(by: { $0.voteCount < $1.voteCount })
+                dataArray = sortArray.sorted(by: { $0.voteCount < $1.voteCount })
             case .voteCountDesc:
-                dataArray = dataArray.sorted(by: { $0.voteCount > $1.voteCount })
+                dataArray = sortArray.sorted(by: { $0.voteCount > $1.voteCount })
             case .voteAvgAsc:
-                dataArray = dataArray.sorted(by: { $0.voteAvg < $1.voteAvg })
+                dataArray = sortArray.sorted(by: { $0.voteAvg < $1.voteAvg })
             case .voteAvgDesc:
-                dataArray = dataArray.sorted(by: { $0.voteAvg > $1.voteAvg })
+                dataArray = sortArray.sorted(by: { $0.voteAvg > $1.voteAvg })
             default:
                 break
         }
@@ -93,8 +89,8 @@ extension MoviesViewController {
     func restoreAllMovies() {
         dataArray = originalDataArray
         
-        if selectedSortType != .none {
-            sortMovies(selectedSortType)
+        if DataContainer.shared.selectedSortType != .none {
+            sortMovies(DataContainer.shared.selectedSortType)
         }
         
         moviesView.reloadData()

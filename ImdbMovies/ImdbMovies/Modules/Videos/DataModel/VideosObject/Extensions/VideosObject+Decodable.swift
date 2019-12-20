@@ -1,5 +1,5 @@
 //
-//  VideoObject+Decodable.swift
+//  VideosObject+Decodable.swift
 //  ImdbMovies
 //
 //  Created by Rost on 19.12.2019.
@@ -9,12 +9,12 @@
 import Foundation
 
 
-extension VideoObject: Decodable {
+extension VideosObject: Decodable {
     
     /// ---> Function decode all properties from json container <--- ///
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: VideoCodingKeys.self)
-        if let value = try values.decodeIfPresent(Int.self, forKey: .objectId) {
+        if let value = try values.decodeIfPresent(String.self, forKey: .objectId) {
             objectId = value
         }
         

@@ -11,5 +11,15 @@ import UIKit
 
 
 class SortView: UIView {
-    var sortType: MoviesSortTypes = .none
+    @IBOutlet weak var sortTable: UITableView!
+    var titlesArray: [String] = []
+    var currentSort: MoviesSortTypes = .none
+    
+    /// ---> View life cycle <--- ///
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setupUI()
+    }
+
 }

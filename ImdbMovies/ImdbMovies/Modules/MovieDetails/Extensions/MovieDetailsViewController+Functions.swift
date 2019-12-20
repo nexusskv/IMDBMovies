@@ -24,7 +24,7 @@ extension MovieDetailsViewController {
         if let object = detailsObject {
             let typeCell        = cellTypes[index.row]
             let reuseId         = typeCell.getName()
-            let cell = sender.dequeueReusableCell(withIdentifier: reuseId, for: index) as! BaseTableCell
+            let cell = sender.dequeueReusableCell(withIdentifier: reuseId, for: index) as! BaseDetailsCell
             
             cell.setDetailsValues(object)
             
@@ -52,4 +52,23 @@ extension MovieDetailsViewController {
         
         return 0
     }
+    
+    /// ---> Function for present details view  <--- ///
+    func presentDetails(_ index: Int) {
+        let type = DetailsTableCells(rawValue: index)
+        if type == .homepage {
+            if !detailsObject.homepage.isEmpty {
+                DataContainer.shared.homepageUrl = detailsObject.homepage
+                            
+                Router.present("Web", from: self)
+            } else {
+                AlertPresenter.showAlert(self, message: "This movie don't have a home page.")
+            }
+        } else if type == .video {
+            DataContainer.shared.selectedDetailsId = detailsObject.objectId
+            
+            Router.present("Videos", from: self)
+        }
+    }
 }
+

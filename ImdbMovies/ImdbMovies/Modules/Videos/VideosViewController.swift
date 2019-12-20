@@ -11,12 +11,19 @@ import UIKit
 
 
 class VideosViewController: UIViewController {
-
+    @IBOutlet weak var videosTable: UITableView!
+    var dataArray: [VideosObject] = []
             
     /// ---> View life cycle  <--- ///
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupUI()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadVideos()
     }
 }

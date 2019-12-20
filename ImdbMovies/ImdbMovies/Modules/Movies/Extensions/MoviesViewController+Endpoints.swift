@@ -24,12 +24,31 @@ extension MoviesViewController {
     }
     
     
+    func loadNextPage(_ index: Int) {
+        if index >= dataArray.count - 5 {
+
+            if dataArray.count > 0 && isDataLoading == false {
+                if let total = DataContainer.shared.totalPages {
+                    if currentPage < total {
+                        currentPage += 1
+                        
+                        print(currentPage)
+                        isDataLoading = true
+                        
+                        loadMovies(currentPage)
+                    }
+                }
+            }
+        }
+    }
+    
+    
     /// ---> Function for processing a received result  <--- ///
     func handleLoadedResult(_ result: AnyObject) {
         if result is [MovieObject] {
             if let movies = result as? [MovieObject] {
-                dataArray            = movies
-                originalDataArray    = movies
+                dataArray            += movies
+                originalDataArray    += movies
 
                 moviesView.reloadData()
             } else {
@@ -38,5 +57,7 @@ extension MoviesViewController {
         } else if result is String {
             AlertPresenter.showAlert(self, message: result as! String)
         }
+        
+        isDataLoading = false
     }
 }

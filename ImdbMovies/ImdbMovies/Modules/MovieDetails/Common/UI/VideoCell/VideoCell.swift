@@ -10,6 +10,6 @@ import Foundation
 import UIKit
 
 
-class VideoCell: BaseTableCell {
+class VideoCell: BaseDetailsCell {
     
 }

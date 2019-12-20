@@ -32,14 +32,14 @@ class JsonHandler {
                     return details as AnyObject
                 case .videosList:
                     if let results = handleVideos(data) as? Data {
-                        let videos = try JSONDecoder().decode([VideoObject].self, from: results)
+                        let videos = try JSONDecoder().decode([VideosObject].self, from: results)
                         if videos.count > 0 {
                             return videos as AnyObject
                         } else {
                             return "Serialization error from results" as AnyObject
                         }
                     } else {
-                       return "Serialization error in get results" as AnyObject
+                       return "List of videos is empty." as AnyObject
                     }
             }
         } catch let error {

@@ -15,7 +15,7 @@ class UrlBuilder {
         let url = makeEndpointUrl(param, type: type)
                
         guard let resultUrl = URL(string: url) else {
-            print("Error: can't create URL")
+            print("Error: can't create endpoint URL")
             return nil
         }
 
@@ -39,7 +39,7 @@ class UrlBuilder {
         return url
     }
     
-    static func makeVideoUrl(_ param: String, type: VideoTypes) -> String {
+    static func makeContentRequest(_ param: String, type: WebTypes) -> URLRequest? {
         var url = ""
         
         switch type {
@@ -47,9 +47,18 @@ class UrlBuilder {
                 url = youtubeUrl + "=" + param
             case .vimeo:
                 url = vimeoUrl + "/" + param
+            case .homepage:
+                url = param
         }
         
-        return url
+        guard let resultUrl = URL(string: url) else {
+            print("Error: can't create content URL")
+            return nil
+        }
+
+        let urlRequest = URLRequest(url: resultUrl)
+        
+        return urlRequest
     }
         
     

@@ -34,10 +34,14 @@ extension MovieDetailsViewController {
 
                 detailsTable.reloadData()
             } else {
-                AlertPresenter.showAlert(self, message: "You received empty data.")
+                AlertPresenter.showAlert(self, message: "You received empty data.", completion: { flag in
+                    Router.dismiss(self)
+                })
             }
         } else if result is String {
-            AlertPresenter.showAlert(self, message: result as! String)
+            AlertPresenter.showAlert(self, message: result as! String, completion: { flag in
+                Router.dismiss(self)
+            })
         }
     }
 }
