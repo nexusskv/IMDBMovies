@@ -12,11 +12,14 @@ import UIKit
 
 class RatingCell: BaseDetailsCell {
     @IBOutlet weak var ratingView: StarsView!
+    @IBOutlet weak var budgetLabel: UILabel!
     
     /// ---> Setter for values on UI <--- ///
     override func setDetailsValues(_ object: MovieDetailsObject) {
         ratingView.setMaxRating(maxMovieRating)
         ratingView.setRating(Float(object.voteAvg))
+        
+        budgetLabel.text = "\(object.budget)" + " $"
     }
 }
 

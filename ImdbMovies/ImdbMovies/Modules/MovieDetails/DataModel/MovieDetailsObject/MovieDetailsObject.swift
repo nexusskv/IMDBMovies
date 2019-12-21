@@ -12,7 +12,6 @@ import Foundation
 struct MovieDetailsObject {
     var objectId                = 0
     var imdbId                  = ""
-    var isAdult                 = false
     var posterPath              = ""
     var iconPath                = ""
     var budget                  = 0
@@ -21,11 +20,9 @@ struct MovieDetailsObject {
     var overview                = ""
     var popularity              = 0.0
     var genres                  = [GenreObject]()
-    var prodCompanies           = [ProdCompanyObject]()
     var releaseDate             = ""
     var runtime                 = 0
     var tagline                 = ""
-    var isVideo                 = false
     var voteCount               = 0
     var voteAvg                 = 0.0
 }

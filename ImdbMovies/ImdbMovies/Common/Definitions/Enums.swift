@@ -53,6 +53,7 @@ enum DetailsTableCells: Int {
     case poster = 0
     case title
     case rating
+    case tagline
     case genres
     case overview
     case video
@@ -64,18 +65,17 @@ enum DetailsTableCells: Int {
                 return 242.0
             case .title:
                 return 52.0
-            case .rating, .video, .homepage:
-                return 60.0
+            case .rating:
+                return 92.0
+            case .tagline:
+                return 50.0
             case .genres:
                 return 68.0
             case .overview:
                 return 160.0
-                
+            case .video, .homepage:
+                return 60.0                
         }
-    }
-    
-    func getPosterType() -> PosterCell.Type {
-        return PosterCell.self
     }
     
     func getClass() -> BaseDetailsCell.Type {
@@ -86,6 +86,8 @@ enum DetailsTableCells: Int {
                 return TitleCell.self
             case .rating:
                 return RatingCell.self
+            case .tagline:
+                return TaglineCell.self
             case .genres:
                 return GenresCell.self
             case . overview:
@@ -105,6 +107,8 @@ enum DetailsTableCells: Int {
                 return "TitleCell"
             case .rating:
                 return "RatingCell"
+            case .tagline:
+                return "TaglineCell"
             case .genres:
                 return "GenresCell"
             case . overview:
@@ -117,6 +121,6 @@ enum DetailsTableCells: Int {
     }
     
     static func getCellTypes() -> [DetailsTableCells] {
-        return [.poster, .title, .rating, .genres, .overview, .video, .homepage]
+        return [.poster, .title, .rating, .tagline, .genres, .overview, .video, .homepage]
     }
 }

@@ -62,22 +62,9 @@ extension MovieDetailsObject: Decodable {
             movieTitle = value
         }
         
-        if let value = try values.decodeIfPresent(Bool.self, forKey: .isAdult) {
-            isAdult = value
-        }
-        
-        if let value = try values.decodeIfPresent(Bool.self, forKey: .isVideo) {
-            isVideo = value
-        }
-        
         if let value = try values.decodeIfPresent([GenreObject].self,
                                                   forKey: .genres) {
             genres = value
-        }
-        
-        if let value = try values.decodeIfPresent([ProdCompanyObject].self,
-                                                  forKey: .prodCompanies) {
-            prodCompanies = value
         }
         
         if let value = try values.decodeIfPresent(String.self, forKey: .releaseDate) {

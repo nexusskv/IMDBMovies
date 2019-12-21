@@ -1,8 +1,8 @@
 //
-//  TitleCell.swift
+//  TaglineCell.swift
 //  ImdbMovies
 //
-//  Created by Rost on 19.12.2019.
+//  Created by Rost on 22.12.2019.
 //  Copyright © 2019 Rost Gress. All rights reserved.
 //
 
@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 
-class TitleCell: BaseDetailsCell {
-    @IBOutlet weak var textTitle: UILabel!
+class TaglineCell: TitleCell {
+
         
     /// ---> Setter for values on UI <--- ///
     override func setDetailsValues(_ object: MovieDetailsObject) {
-        textTitle.text = object.movieTitle
+        textTitle.text = "\"" + object.tagline +  "\""
     }
 }

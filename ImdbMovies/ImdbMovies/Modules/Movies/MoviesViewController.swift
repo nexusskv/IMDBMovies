@@ -12,6 +12,7 @@ import UIKit
 
 class MoviesViewController: UIViewController {
     @IBOutlet weak var moviesView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var sortView: SortView!
     var dataArray: [MovieObject] = []
     var originalDataArray: [MovieObject] = []    

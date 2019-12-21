@@ -264,6 +264,7 @@
                     </view>
                     <connections>
                         <outlet property="moviesView" destination="YiV-YG-jNj" id="uUV-rD-8bv"/>
+                        <outlet property="searchBar" destination="9L5-Ie-557" id="q0e-ht-5nX"/>
                         <outlet property="sortView" destination="cd7-vQ-T4l" id="YhF-X5-WPy"/>
                     </connections>
                 </viewController>

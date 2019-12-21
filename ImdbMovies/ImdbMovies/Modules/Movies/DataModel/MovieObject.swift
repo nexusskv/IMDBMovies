@@ -13,12 +13,8 @@ struct MovieObject {
     var objectId        = 0
     var voteCount       = 0
     var voteAvg         = 0.0
-    var isVideo         = false
     var posterPath      = ""
     var iconPath        = ""
-    var isAdult         = false
-    var origLang        = ""
-    var origTitle       = ""
     var movieTitle      = ""
     var releaseDate     = ""
     var overview        = ""

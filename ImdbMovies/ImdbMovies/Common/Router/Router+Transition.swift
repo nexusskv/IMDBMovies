@@ -14,9 +14,9 @@ extension Router {
     
     static func makeTransition(_ type: TransitionType) -> CATransition {
         let transition              = CATransition()
-        transition.duration         = 0.45
+        transition.duration         = 0.25
         transition.type             = .push
-        transition.timingFunction   = CAMediaTimingFunction(name: .easeInEaseOut)
+        transition.timingFunction   = CAMediaTimingFunction(name: .easeIn)
         
         switch type {
             case .push:
