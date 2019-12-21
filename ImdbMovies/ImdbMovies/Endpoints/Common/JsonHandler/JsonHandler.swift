@@ -21,10 +21,10 @@ class JsonHandler {
                         if movies.count > 0 {
                             return movies as AnyObject
                         } else {
-                            return "Serialization error from results" as AnyObject
+                            return "The list of movies is empty. Try a different name." as AnyObject
                         }
                     } else {
-                       return "Serialization error in get results" as AnyObject
+                       return "The list of movies is empty." as AnyObject
                     }
                 case .movieDetails:
                     let details = try JSONDecoder().decode(MovieDetailsObject.self, from: data)
@@ -36,10 +36,10 @@ class JsonHandler {
                         if videos.count > 0 {
                             return videos as AnyObject
                         } else {
-                            return "Serialization error from results" as AnyObject
+                            return "The list of videos is empty." as AnyObject
                         }
                     } else {
-                       return "List of videos is empty." as AnyObject
+                       return "The list of videos is empty." as AnyObject
                     }
             }
         } catch let error {
