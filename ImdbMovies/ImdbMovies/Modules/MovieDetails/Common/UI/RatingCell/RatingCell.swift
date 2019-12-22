@@ -19,7 +19,9 @@ class RatingCell: BaseDetailsCell {
         ratingView.setMaxRating(maxMovieRating)
         ratingView.setRating(Float(object.voteAvg))
         
-        budgetLabel.text = "\(object.budget)" + " $"
+        if object.budget > 0 {
+            budgetLabel.text = "\(object.budget)" + " $"
+        }
     }
 }
 

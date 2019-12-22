@@ -12,6 +12,8 @@ import UIKit
 
 class SortView: UIView {
     @IBOutlet weak var sortTable: UITableView!
+    @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     var titlesArray: [String] = []
     var currentSort: MoviesSortTypes = .none
     

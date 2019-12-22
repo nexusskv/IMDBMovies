@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,15 +12,62 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movies" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7k-ly-Nrt">
+                                <rect key="frame" x="45" y="586" width="324" height="170"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IMDB" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kbw-rm-LVl">
+                                <rect key="frame" x="45" y="139" width="324" height="170"/>
+                                <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="70"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="best_2019" translatesAutoresizingMaskIntoConstraints="NO" id="tYC-ZY-Q8E">
+                                <rect key="frame" x="0.0" y="302.5" width="414" height="291"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="291" id="fxk-Rj-N3b"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imdb_blue_icon" translatesAutoresizingMaskIntoConstraints="NO" id="7SQ-rq-cj0">
+                                <rect key="frame" x="138" y="399.5" width="138" height="97"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="Gxc-Vb-Gtf"/>
+                                    <constraint firstAttribute="width" constant="138" id="WeR-Rt-YGI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tYC-ZY-Q8E" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1hq-M2-dsa"/>
+                            <constraint firstItem="7SQ-rq-cj0" firstAttribute="top" secondItem="kbw-rm-LVl" secondAttribute="bottom" constant="90.5" id="7QM-oJ-K5O"/>
+                            <constraint firstItem="tYC-ZY-Q8E" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BeK-vd-Gl6"/>
+                            <constraint firstItem="7SQ-rq-cj0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EhR-L3-7Kx"/>
+                            <constraint firstItem="tYC-ZY-Q8E" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="KV8-ig-kqr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z7k-ly-Nrt" secondAttribute="trailing" constant="45" id="LAb-rn-clT"/>
+                            <constraint firstItem="tYC-ZY-Q8E" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MeX-bW-f4G"/>
+                            <constraint firstItem="7SQ-rq-cj0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="R9J-TU-pbm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kbw-rm-LVl" secondAttribute="trailing" constant="45" id="SVq-cD-j2G"/>
+                            <constraint firstItem="kbw-rm-LVl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="95" id="hBy-WW-ulp"/>
+                            <constraint firstItem="z7k-ly-Nrt" firstAttribute="top" secondItem="7SQ-rq-cj0" secondAttribute="bottom" constant="89.5" id="jy5-W0-QWK"/>
+                            <constraint firstItem="z7k-ly-Nrt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="mgv-L3-q4z"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z7k-ly-Nrt" secondAttribute="bottom" constant="106" id="nUd-BG-j0d"/>
+                            <constraint firstItem="kbw-rm-LVl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="slW-Nb-tlR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="best_2019" width="300" height="200"/>
+        <image name="imdb_blue_icon" width="100" height="51.5"/>
+    </resources>
 </document>

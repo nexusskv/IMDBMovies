@@ -27,6 +27,7 @@ extension MoviesViewController {
     func sortActionHandler(_ value: Int) {
         if let type = MoviesSortTypes(rawValue: value) {
             sortView.currentSort = type
+            sortView.sortTable.reloadData()
         }
     }
     

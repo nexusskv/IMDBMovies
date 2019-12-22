@@ -11,8 +11,15 @@ import UIKit
 
 extension WebViewController {
         
+    /// ---> Function for UI customisations  <--- ///
+    func setupUI() {
+        webView.navigationDelegate = self
+    }
+    
     /// ---> Function for load content to web view  <--- ///
     func loadContent() {
+        activityIndicator.startAnimating()
+        
         if let object = DataContainer.shared.videoObject { // Load Video
             titleItem.title = "Video"
             

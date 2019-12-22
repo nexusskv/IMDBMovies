@@ -14,6 +14,7 @@ extension MovieCell {
     
     /// ---> Function for add UI customizations <--- ///
     func setupUI() {
+        roundCorners(7, border: 0.4, color: .lightGray)
         contentView.roundCorners(7, border: 0.4, color: .lightGray)
     }
     

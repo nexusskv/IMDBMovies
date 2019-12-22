@@ -15,6 +15,10 @@ class TaglineCell: TitleCell {
         
     /// ---> Setter for values on UI <--- ///
     override func setDetailsValues(_ object: MovieDetailsObject) {
-        textTitle.text = "\"" + object.tagline +  "\""
+        if !object.tagline.isEmpty {
+            textTitle.text = "\"" + object.tagline +  "\""
+        } else {
+            textTitle.text = "-"
+        }
     }
 }

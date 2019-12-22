@@ -27,11 +27,17 @@ class WebUITests: XCTestCase {
     
     func testViewsAfterLoading() {
         XCTAssertNil(viewController.titleItem, "Before loading the navigation item should be nil")
+        
         XCTAssertNil(viewController.webView, "Before loading the web view should be nil")
+        
+        XCTAssertNil(viewController.activityIndicator, "Before loading the activity indicator should be nil")
 
         let _ = viewController.view
 
         XCTAssertNotNil(viewController.titleItem, "The navigation item should be set")
+        
         XCTAssertNotNil(viewController.webView, "The web view should be set")
+        
+        XCTAssertNotNil(viewController.activityIndicator, "The activity indicator should be set")
     }
 }

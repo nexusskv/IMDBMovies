@@ -13,9 +13,16 @@ import WebKit
 
 class WebViewController: UIViewController {
     @IBOutlet weak var titleItem: UINavigationItem!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var webView: WKWebView!
     
     /// ---> View life cycle  <--- ///
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupUI()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

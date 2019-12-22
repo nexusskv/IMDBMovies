@@ -32,7 +32,7 @@
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="e7v-H6-30Z">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="0.85410387190000003" blue="0.5208990241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="VideosCell" rowHeight="66" id="v7t-UO-Z9L" customClass="VideosCell" customModule="ImdbMovies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="66"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="e7v-H6-30Z" firstAttribute="top" secondItem="Afd-Gw-8Nn" secondAttribute="bottom" symbolic="YES" id="0ad-bt-SHH"/>
                             <constraint firstItem="QIf-MT-2KQ" firstAttribute="trailing" secondItem="e7v-H6-30Z" secondAttribute="trailing" id="2Oi-wk-0FS"/>

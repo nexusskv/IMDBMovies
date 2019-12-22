@@ -32,7 +32,7 @@
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gLV-Mw-MHc">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="1" green="0.85410387190000003" blue="0.5208990241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PosterCell" rowHeight="242" id="edY-4d-FF6" customClass="PosterCell" customModule="ImdbMovies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="242"/>
@@ -254,7 +254,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="r9U-CD-B9L" firstAttribute="bottom" secondItem="gLV-Mw-MHc" secondAttribute="bottom" id="1Gc-k3-Oio"/>
                             <constraint firstItem="6aB-un-ZHB" firstAttribute="trailing" secondItem="r9U-CD-B9L" secondAttribute="trailing" id="8Ar-dJ-oqC"/>

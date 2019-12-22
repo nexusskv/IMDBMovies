@@ -50,7 +50,7 @@ extension MoviesViewController {
     /// ---> Function for processing a search text  <--- ///
     func handleSearchText(_ text: String, at bar: UISearchBar) {
         if text.isEmpty {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
                 self.endSearch(bar)
             }
         }

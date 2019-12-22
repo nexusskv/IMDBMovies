@@ -14,7 +14,11 @@ extension SortView {
     
     /// ---> Function for UI customisations  <--- ///
     func setupUI() {
-        roundCorners(10.0, border: 1.5, color: .lightGray)
+        roundCorners(10.0, border: 1.5, color: .darkGray)
+        okButton.roundCorners(10.0, border: 0.5, color: .lightGray)
+        
+        let halfRadius = cancelButton.frame.size.width / 2.0
+        cancelButton.roundCorners(halfRadius, border: 0.5, color: .lightGray)
         
         sortTable.tableFooterView = UIView()
         
