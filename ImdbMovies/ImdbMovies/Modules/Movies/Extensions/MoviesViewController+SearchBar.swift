@@ -12,19 +12,25 @@ import UIKit
 
 extension MoviesViewController: UISearchBarDelegate {
     
-    /// ---> Search bar delegate functions <--- ///
+    /// ---> Fucntion of search bar delegate protocol <--- ///
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
     }
     
+    
+    /// ---> Fucntion of search bar delegate protocol <--- ///
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         handleSearchCancel(searchBar)
     }
     
+    
+    /// ---> Fucntion of search bar delegate protocol <--- ///
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {        
         handleSearch(searchBar)
     }
     
+    
+    /// ---> Fucntion of search bar delegate protocol <--- ///
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         handleSearchText(searchText, at: searchBar)
     }

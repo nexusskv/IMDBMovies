@@ -10,20 +10,8 @@ import Foundation
 
 
 class UrlBuilder {
-    
-    static func makeRequest(_ param: String, query: String, type: EndpointsTypes) -> URLRequest? {
-        let url = makeEndpointUrl(param, query: query, type: type)
-               
-        guard let resultUrl = URL(string: url) else {
-            print("Error: can't create endpoint URL")
-            return nil
-        }
 
-        let urlRequest = URLRequest(url: resultUrl)
-        
-        return urlRequest
-    }
-    
+    /// ---> Function for make custom url to request <--- ///
     static func makeEndpointUrl(_ param: String, query: String, type: EndpointsTypes) -> String {
         var url = ""
         
@@ -41,31 +29,13 @@ class UrlBuilder {
         return url
     }
     
-    static func makeContentRequest(_ param: String, type: WebTypes) -> URLRequest? {
-        var url = ""
-        
-        switch type {
-            case .youtube:
-                url = youtubeUrl + "=" + param
-            case .vimeo:
-                url = vimeoUrl + "/" + param
-            case .homepage:
-                url = param
-        }
-        
-        guard let resultUrl = URL(string: url) else {
-            print("Error: can't create content URL")
-            return nil
-        }
 
-        let urlRequest = URLRequest(url: resultUrl)
-        
-        return urlRequest
-    }
-        
-    
+    /// ---> Function for make session to request <--- ///
     static func makeSession() -> URLSession {
         let config = URLSessionConfiguration.default
+        config.timeoutIntervalForRequest    = TimeInterval(defaultTimeout)
+        config.timeoutIntervalForResource   = TimeInterval(defaultTimeout * 2)
+        
         let session = URLSession(configuration: config)
         
         return session

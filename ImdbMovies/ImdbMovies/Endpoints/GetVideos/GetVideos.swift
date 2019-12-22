@@ -13,7 +13,7 @@ class GetVideos {
 
     /// ---> Function for load data from API <--- ///
     static func loadVideos(_ value: Int, completion: ((_ response: AnyObject) -> Void)?) {
-        if let request = UrlBuilder.makeRequest("\(value)", query: "", type: .videosList) {
+        if let request = RequestBuilder.makeRequest("\(value)", query: "", type: .videosList) {
             let session = UrlBuilder.makeSession()
             
             let task = session.dataTask(with: request,

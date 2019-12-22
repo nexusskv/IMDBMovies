@@ -12,8 +12,9 @@ import UIKit
 
 class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var detailsTable: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var detailsObject: MovieDetailsObject!
-    var cellTypes = [DetailsTableCells]()
+    var cellTypes = [DetailsTableCells]()    
             
     /// ---> View life cycle  <--- ///
     override func viewDidLoad() {
@@ -22,6 +23,8 @@ class MovieDetailsViewController: UIViewController {
         setupUI()
     }
 
+    
+    /// ---> View life cycle  <--- ///
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

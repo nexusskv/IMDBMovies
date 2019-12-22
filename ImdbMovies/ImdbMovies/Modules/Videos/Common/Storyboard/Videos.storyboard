@@ -65,12 +65,21 @@
                                     <outlet property="delegate" destination="Eau-56-HmF" id="fY3-Tb-49f"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="sw0-T7-Tcw">
+                                <rect key="frame" x="187" y="428" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fZi-pm-95l"/>
+                                    <constraint firstAttribute="width" constant="40" id="zn5-dd-ULs"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="e7v-H6-30Z" firstAttribute="top" secondItem="Afd-Gw-8Nn" secondAttribute="bottom" symbolic="YES" id="0ad-bt-SHH"/>
                             <constraint firstItem="QIf-MT-2KQ" firstAttribute="trailing" secondItem="e7v-H6-30Z" secondAttribute="trailing" id="2Oi-wk-0FS"/>
                             <constraint firstItem="Afd-Gw-8Nn" firstAttribute="leading" secondItem="QIf-MT-2KQ" secondAttribute="leading" id="6ck-Rg-DGK"/>
+                            <constraint firstItem="sw0-T7-Tcw" firstAttribute="centerY" secondItem="AGz-eL-Ryn" secondAttribute="centerY" id="9Ut-8f-C41"/>
+                            <constraint firstItem="sw0-T7-Tcw" firstAttribute="centerX" secondItem="AGz-eL-Ryn" secondAttribute="centerX" id="B3U-1u-Um2"/>
                             <constraint firstItem="Afd-Gw-8Nn" firstAttribute="trailing" secondItem="QIf-MT-2KQ" secondAttribute="trailing" id="Nhl-AA-pdz"/>
                             <constraint firstItem="Afd-Gw-8Nn" firstAttribute="top" secondItem="QIf-MT-2KQ" secondAttribute="top" id="Orj-Ic-ui0"/>
                             <constraint firstItem="QIf-MT-2KQ" firstAttribute="bottom" secondItem="e7v-H6-30Z" secondAttribute="bottom" id="hHL-jJ-G2s"/>
@@ -79,6 +88,7 @@
                         <viewLayoutGuide key="safeArea" id="QIf-MT-2KQ"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="sw0-T7-Tcw" id="l3M-2B-3De"/>
                         <outlet property="videosTable" destination="e7v-H6-30Z" id="i2O-Ze-jxx"/>
                     </connections>
                 </viewController>

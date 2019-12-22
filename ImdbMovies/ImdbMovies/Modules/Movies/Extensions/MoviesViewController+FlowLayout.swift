@@ -12,7 +12,7 @@ import UIKit
 
 extension MoviesViewController: UICollectionViewDelegateFlowLayout {
 
-    /// ---> Function for set dynamically width and height of cell   <--- ///
+    /// ---> Fucntion of collection view delegate flow layout protocol <--- ///
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -21,7 +21,7 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
     }
     
     
-    /// ---> Function for set cell indents   <--- ///
+    /// ---> Fucntion of collection view delegate flow layout protocol <--- ///
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -29,7 +29,7 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
     }
 
     
-    /// ---> Function for set section indent   <--- ///
+    /// ---> Fucntion of collection view delegate flow layout protocol <--- ///
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -37,7 +37,7 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
     }
 
     
-    /// ---> Function for set section insets   <--- ///
+    /// ---> Fucntion of collection view delegate flow layout protocol <--- ///
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {

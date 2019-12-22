@@ -12,24 +12,31 @@ import XCTest
 
 class MovieDetailsDataTests: XCTestCase {
     var viewController: MovieDetailsViewController!
-               
+    
+    /// ---> Function for set test view controller <--- ///
     override func setUp() {
         let storyboard = UIStoryboard(name: "MovieDetails", bundle: nil)
         viewController = storyboard.instantiateViewController(withIdentifier: "MovieDetailsViewController") as? MovieDetailsViewController
     }
-
+    
+    
+    /// ---> Function for destruct data <--- ///
     override func tearDown() {
         viewController  = nil
         
         super.tearDown()
     }
 
+    
+    /// ---> Function for check test object <--- ///
     func testMovieObject() {
         viewController.detailsObject = makeTestObject()
         
         XCTAssertNotNil(viewController.detailsObject, "MovieDetailsObject is empty.")
     }
     
+    
+    /// ---> Function for make test object <--- ///
     func makeTestObject() -> MovieDetailsObject {
         return MovieDetailsObject(objectId: 1,
                                   imdbId: "TestId",

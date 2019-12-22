@@ -14,6 +14,8 @@ extension MoviesViewController {
     
     /// ---> Function for download data source from server API <--- ///
     func loadMovies(_ page: Int) {
+        activityIndicator.startAnimating()
+        
         GetMovies.loadList(page, completion: { [weak self] result in
             guard let strongSelf = self else {
               return
@@ -24,7 +26,10 @@ extension MoviesViewController {
     }
 
     
+    /// ---> Function for download movies by search query from server API <--- ///
     func loadSearch(_ query: String, page: Int) {
+        activityIndicator.startAnimating()
+        
         GetSearch.loadSearch(query, page: page, completion: { [weak self] result in
             guard let strongSelf = self else {
               return
@@ -56,5 +61,6 @@ extension MoviesViewController {
         }
         
         isDataLoading = false
+        activityIndicator.stopAnimating()
     }
 }

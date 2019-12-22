@@ -13,7 +13,7 @@ class GetMovies {
 
     /// ---> Function for load data from API <--- ///
     static func loadList(_ page: Int, completion: ((_ response: AnyObject) -> Void)?) {
-        if let request = UrlBuilder.makeRequest("\(page)", query: "", type: .movies) {
+        if let request = RequestBuilder.makeRequest("\(page)", query: "", type: .movies) {
             let session = UrlBuilder.makeSession()
             
             let task = session.dataTask(with: request,

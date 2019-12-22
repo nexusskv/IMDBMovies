@@ -12,8 +12,10 @@ import UIKit
 
 class MoviesViewController: UIViewController {
     @IBOutlet weak var moviesView: UICollectionView!
+    @IBOutlet weak var searchView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var sortView: SortView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var dataArray: [MovieObject] = []
     var originalDataArray: [MovieObject] = []    
     var currentPage = 1

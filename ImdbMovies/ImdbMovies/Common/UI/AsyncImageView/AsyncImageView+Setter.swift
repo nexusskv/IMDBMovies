@@ -12,6 +12,8 @@ import UIKit
 
 extension AsyncImageView {
     
+    
+    /// ---> Function for set url to upload pictures on image view <--- ///
     func setUrl(_ url: String) {
         let holderImage = UIImage(named: "cinema_holder")
         

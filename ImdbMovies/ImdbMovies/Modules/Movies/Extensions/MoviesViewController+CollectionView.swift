@@ -12,17 +12,21 @@ import UIKit
 
 extension MoviesViewController: UICollectionViewDataSource {
     
-    /// ---> Collection view data source fucntions <--- ///
+    /// ---> Fucntion of collection view data source protocol <--- ///
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataArray.count
     }
     
+    
+    /// ---> Fucntion of collection view data source protocol <--- ///
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = makeCell(collectionView, at: indexPath)
                
         return cell
     }
     
+    
+    /// ---> Fucntion of collection view data source protocol <--- ///
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         loadNextPage(indexPath.row)
     }

@@ -8,15 +8,20 @@
 
 import Foundation
 
+/// ---> API key <--- ///
+let apiKey              = "301fb81ba21a95f0581119093f49bdaf"
 
-let apiKey          = "301fb81ba21a95f0581119093f49bdaf"
-let apiUrl          = "https://api.themoviedb.org/3"
-let listUrl         = apiUrl + "/" + movieParam + "/" + playingParam
-let detailsUrl      = apiUrl + "/" + movieParam
-let imageUrl        = "https://image.tmdb.org/t/p/w300"      // + Size screen
-let youtubeUrl      = "https://www.youtube.com/watch?v" // =KEY_FROM_RESPONCE
-let vimeoUrl        = "https://vimeo.com"   // /KEY
 
+/// ---> API urls <--- ///
+let apiUrl              = "https://api.themoviedb.org/3"
+let listUrl             = apiUrl + "/" + movieParam + "/" + playingParam
+let detailsUrl          = apiUrl + "/" + movieParam
+let imageUrl            = "https://image.tmdb.org/t/p/w300"      // + Size screen
+let youtubeUrl          = "https://www.youtube.com/watch?v" // =KEY_FROM_RESPONCE
+let vimeoUrl            = "https://vimeo.com"   // /KEY
+
+
+/// ---> API params <--- ///
 let apiKeyParam         = "api_key" + "=" + apiKey
 let keyLangParam        = apiKeyParam + "&" + langParam
 let keyLangPageParam    = keyLangParam + "&" + pageParam
@@ -30,4 +35,9 @@ let pageParam           = "page"
 let adultParam          = "include_adult"
 
 
-let maxMovieRating  = 10
+/// ---> API request params <--- ///
+let defaultTimeout      = 30
+
+
+/// ---> Stars view params <--- ///
+let maxMovieRating      = 10

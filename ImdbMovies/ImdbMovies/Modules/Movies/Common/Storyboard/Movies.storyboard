@@ -23,6 +23,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Imdb Movies" id="JlD-lF-yCu">
+                                        <barButtonItem key="leftBarButtonItem" image="search_icon" id="nMo-H9-VD8">
+                                            <connections>
+                                                <action selector="searchItemTapped" destination="BYZ-38-t0r" id="BqS-NB-wHL"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" image="sort_icon" id="0pg-bn-jZa">
                                             <connections>
                                                 <action selector="sortItemTapped" destination="BYZ-38-t0r" id="StE-jA-PHd"/>
@@ -32,7 +37,7 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YiV-YG-jNj">
-                                <rect key="frame" x="0.0" y="137" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="769"/>
                                 <color key="backgroundColor" red="1" green="0.85410387190000003" blue="0.5208990241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="829-Dt-Sis">
                                     <size key="itemSize" width="160" height="257"/>
@@ -122,9 +127,9 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byb-fL-YFj">
-                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="0.0"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Please enter the title of movie" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9L5-Ie-557">
+                                    <searchBar hidden="YES" contentMode="redraw" fixedFrame="YES" placeholder="Please enter the title of movie" translatesAutoresizingMaskIntoConstraints="NO" id="9L5-Ie-557">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="0.67168865799999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -136,7 +141,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.85410387190000003" blue="0.5208990241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="LOE-JO-XLC"/>
+                                    <constraint firstAttribute="height" identifier="searchViewHeight" id="LOE-JO-XLC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cd7-vQ-T4l" customClass="SortView" customModule="ImdbMovies" customModuleProvider="target">
@@ -253,6 +258,13 @@
                                     <outlet property="sortTable" destination="pX9-5Z-SI6" id="R8x-dX-Ejk"/>
                                 </connections>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="aQd-bZ-VH5">
+                                <rect key="frame" x="187" y="428" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="ei3-am-t2c"/>
+                                    <constraint firstAttribute="height" constant="40" id="yss-Cj-u5c"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -262,18 +274,22 @@
                             <constraint firstItem="byb-fL-YFj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LZ3-jx-4TO"/>
                             <constraint firstItem="Pmb-FF-ieB" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M5a-Aq-gjK"/>
                             <constraint firstItem="YiV-YG-jNj" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Rgu-3U-w7r"/>
+                            <constraint firstItem="aQd-bZ-VH5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ar3-UR-XlB"/>
                             <constraint firstItem="cd7-vQ-T4l" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="dJn-DW-0G0"/>
                             <constraint firstItem="Pmb-FF-ieB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iCY-dW-fik"/>
                             <constraint firstItem="YiV-YG-jNj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jKJ-Cv-Yqq"/>
                             <constraint firstItem="byb-fL-YFj" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kRE-Au-flN"/>
+                            <constraint firstItem="aQd-bZ-VH5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="n84-LK-ojj"/>
                             <constraint firstItem="Pmb-FF-ieB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ngh-UN-Ffb"/>
                             <constraint firstItem="YiV-YG-jNj" firstAttribute="top" secondItem="byb-fL-YFj" secondAttribute="bottom" constant="5" id="zWp-Jz-waS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="aQd-bZ-VH5" id="Fma-aT-2WP"/>
                         <outlet property="moviesView" destination="YiV-YG-jNj" id="uUV-rD-8bv"/>
                         <outlet property="searchBar" destination="9L5-Ie-557" id="q0e-ht-5nX"/>
+                        <outlet property="searchView" destination="byb-fL-YFj" id="y7t-6y-tsK"/>
                         <outlet property="sortView" destination="cd7-vQ-T4l" id="YhF-X5-WPy"/>
                     </connections>
                 </viewController>
@@ -284,6 +300,7 @@
     </scenes>
     <resources>
         <image name="no_checkmark_icon" width="17.5" height="17.5"/>
+        <image name="search_icon" width="32" height="33.5"/>
         <image name="sort_icon" width="32" height="32"/>
     </resources>
 </document>

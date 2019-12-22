@@ -15,6 +15,8 @@ extension VideosViewController {
     /// ---> Function for download data source from server API <--- ///
     func loadVideos() {
         if let value = DataContainer.shared.selectedDetailsId {
+            activityIndicator.startAnimating()
+            
             GetVideos.loadVideos(value, completion: { [weak self] result in
                 guard let strongSelf = self else {
                   return
@@ -28,6 +30,8 @@ extension VideosViewController {
     
     /// ---> Function for processing a received result  <--- ///
     func handleLoadedResult(_ result: AnyObject) {
+        activityIndicator.stopAnimating()
+        
         if result is [VideosObject] {
             if let videos = result as? [VideosObject] {
                 dataArray = videos

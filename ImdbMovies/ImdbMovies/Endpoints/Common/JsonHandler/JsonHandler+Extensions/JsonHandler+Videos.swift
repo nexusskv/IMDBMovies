@@ -11,6 +11,7 @@ import Foundation
 
 extension JsonHandler {
     
+    /// ---> Function for handle data of videos  <--- ///
     static func handleVideos(_ data: Data) -> AnyObject? {
         do {
             if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {

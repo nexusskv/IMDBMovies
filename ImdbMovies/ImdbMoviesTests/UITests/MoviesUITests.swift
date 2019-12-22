@@ -13,32 +13,55 @@ import XCTest
 class MoviesUITests: XCTestCase {
     var viewController: MoviesViewController!
     
-           
+    /// ---> Function for set test view controller <--- ///
     override func setUp() {
        let storyboard = UIStoryboard(name: "Movies", bundle: nil)
         viewController = storyboard.instantiateViewController(withIdentifier: "MoviesViewController") as? MoviesViewController
     }
 
+    
+    /// ---> Function for destruct data <--- ///
     override func tearDown() {
         viewController = nil
         
         super.tearDown()
     }
     
+    
+    /// --->  Function for test exists views after loading  <--- ///
     func testViewsAfterLoading() {
-        XCTAssertNil(viewController.sortView,
-                     "Before loading the sort view should be nil")
         XCTAssertNil(viewController.moviesView,
-                     "Before loading the collection view should be nil")
-
+                     "Before loading the collection view should be nil.")
+        
+        XCTAssertNil(viewController.sortView,
+                     "Before loading the sort view should be nil.")
+                        
+        XCTAssertNil(viewController.searchView,
+                     "Before loading the search view should be nil.")
+        
+        XCTAssertNil(viewController.searchBar,
+                     "Before loading the search view should be nil.")
+        
+        XCTAssertNil(viewController.activityIndicator,
+                     "Before loading the activity indicator should be nil.")
+        
         let _ = viewController.view
 
         XCTAssertNotNil(viewController.moviesView,
-                        "The collection view should be set")
+                        "The collection view should be set.")
         
         XCTAssertNotNil(viewController.sortView,
-                        "The sort view should be set")
+                        "The sort view should be set.")
         
+        XCTAssertNotNil(viewController.searchView,
+                        "The search view should be set.")
+        
+        XCTAssertNotNil(viewController.searchBar,
+                        "The search bar should be set.")
+        
+        XCTAssertNotNil(viewController.activityIndicator,
+                        "The activity indicator should be set.")
+                
         XCTAssertNotNil(viewController.moviesView.dataSource,
                             "Collection view data source isn't set.")
 
@@ -49,6 +72,8 @@ class MoviesUITests: XCTestCase {
                         "Search bar delegate isn't set.")
     }
     
+    
+    /// --->  Function for check conform collection view to delegate protocol  <--- ///
     func testConformsToCollectionViewDelegate() {
         XCTAssert(viewController.conforms(to: UICollectionViewDelegate.self),
                   "Collection view not conform to UICollectionViewDelegate.")
@@ -57,6 +82,8 @@ class MoviesUITests: XCTestCase {
                       "Collection view not respond to willDisplay:forItemAt: selector.")
     }
     
+    
+    /// --->  Function for check conform collection view to flow layout delegate protocol  <--- ///
     func testConformsToCollectionViewDelegateFlowLayout () {
         XCTAssert(viewController.conforms(to: UICollectionViewDelegateFlowLayout.self),
                   "Collection view not conform to UICollectionViewDelegateFlowLayout.")
@@ -74,6 +101,8 @@ class MoviesUITests: XCTestCase {
                       "Collection view not respond to layout:minimumLineSpacingForSectionAt: selector.")
     }
     
+    
+    /// --->  Function for check conform search bar to delegate protocol  <--- ///
     func testConformsToSearchBarDelegateProtocol() {
         XCTAssert(viewController.conforms(to: UISearchBarDelegate.self),
                   "Search bar not conform to UISearchBarDelegate.")

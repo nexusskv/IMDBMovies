@@ -18,7 +18,8 @@ extension MoviesViewController {
         
         cellMargin = 5.0
     }
-        
+     
+    
     /// ---> Function for make custom cells based on index of row  <--- ///
     func makeCell(_ sender: UICollectionView, at index: IndexPath) -> UICollectionViewCell {
         let cell = sender.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: index) as? MovieCell
@@ -63,6 +64,7 @@ extension MoviesViewController {
             }
         }
     }
+    
     
     /// ---> Function for scroll list of movies to top  <--- ///
     func scrollMoviesToTop() {

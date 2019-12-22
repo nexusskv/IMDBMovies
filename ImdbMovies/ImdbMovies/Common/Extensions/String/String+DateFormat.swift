@@ -11,6 +11,8 @@ import Foundation
 
 extension String {
     
+    
+    /// ---> Function for format date to full date format <--- ///
     func formatDate() -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat    = "yyyy-MM-dd"

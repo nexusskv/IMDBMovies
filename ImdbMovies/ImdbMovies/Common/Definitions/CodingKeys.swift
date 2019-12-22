@@ -9,6 +9,7 @@
 import Foundation
 
 
+/// ---> Coding keys for decoding values in the movie object <--- ///
 enum MoviesCodingKeys: String, CodingKey {
     case objectId       = "id"
     case voteCount      = "vote_count"
@@ -26,6 +27,8 @@ enum MoviesCodingKeys: String, CodingKey {
     case popularity
 }
 
+
+/// ---> Coding keys for decoding values in the movie details object <--- ///
 enum MovieDetailsCodingKeys: String, CodingKey {
     case objectId           = "id"
     case imdbId             = "imdb_id"
@@ -54,18 +57,15 @@ enum MovieDetailsCodingKeys: String, CodingKey {
     case popularity
 }
 
-enum ProdCompanyCodingKeys: String, CodingKey {
-    case objectId           = "id"
-    case logoPath           = "logo_path"
-    case origCountry        = "origin_country"
-    case name
-}
 
+/// ---> Coding keys for decoding values in the genre object <--- ///
 enum GenreCodingKeys: String, CodingKey {
     case objectId           = "id"
     case name
 }
 
+
+/// ---> Coding keys for decoding values in the video object <--- ///
 enum VideoCodingKeys: String, CodingKey {
     case objectId       = "id"
     case key

@@ -12,7 +12,7 @@ import UIKit
 
 extension StarsView {
     
-    
+    /// ---> Function for UI customisations  <--- ///
     func setupUI() {
         notSelectedStar     = UIImage(named: "not_selected_star")
         selectedStar        = UIImage(named: "selected_star")
@@ -30,6 +30,7 @@ extension StarsView {
     }
     
     
+    /// ---> Function for create all stars  <--- ///
     func setupView() {
         for _ in 0 ..< maxRating {
             let imageView = UIImageView()
@@ -44,6 +45,7 @@ extension StarsView {
     }
     
     
+    /// ---> Function for refresh all stars  <--- ///
     func refreshStars() {
         for i in 0 ..< starViews.count {
             let imageView = starViews[i]

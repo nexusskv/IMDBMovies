@@ -15,6 +15,8 @@ extension MovieDetailsViewController {
     /// ---> Function for download data source from server API <--- ///
     func loadMovieDetails() {
         if let value = DataContainer.shared.selectedMovieId {
+            activityIndicator.startAnimating()
+            
             GetMovieDetails.loadDetails(value, completion: { [weak self] result in
                 guard let strongSelf = self else {
                   return
@@ -28,6 +30,8 @@ extension MovieDetailsViewController {
     
     /// ---> Function for processing a received result  <--- ///
     func handleLoadedResult(_ result: AnyObject) {
+        activityIndicator.stopAnimating()
+        
         if result is MovieDetailsObject {
             if let details = result as? MovieDetailsObject {
                 detailsObject = details

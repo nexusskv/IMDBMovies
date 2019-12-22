@@ -13,7 +13,7 @@ class GetSearch {
 
     /// ---> Function for load data from API <--- ///
     static func loadSearch(_ query: String, page: Int, completion: ((_ response: AnyObject) -> Void)?) {
-        if let request = UrlBuilder.makeRequest("\(page)", query: query, type: .search) {
+        if let request = RequestBuilder.makeRequest("\(page)", query: query, type: .search) {
             let session = UrlBuilder.makeSession()
             
             let task = session.dataTask(with: request,

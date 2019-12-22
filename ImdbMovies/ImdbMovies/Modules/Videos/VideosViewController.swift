@@ -12,6 +12,7 @@ import UIKit
 
 class VideosViewController: UIViewController {
     @IBOutlet weak var videosTable: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var dataArray: [VideosObject] = []
             
     /// ---> View life cycle  <--- ///
@@ -21,6 +22,8 @@ class VideosViewController: UIViewController {
         setupUI()
     }
 
+    
+    /// ---> View life cycle  <--- ///
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         

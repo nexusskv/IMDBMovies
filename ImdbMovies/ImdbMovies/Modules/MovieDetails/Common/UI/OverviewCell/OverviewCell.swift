@@ -20,10 +20,12 @@ class OverviewCell: BaseDetailsCell {
         setupUI()
     }
     
+    
     /// ---> Function for add UI customizations <--- ///
     func setupUI() {
         overTextView.roundCorners(5, border: 0.4, color: .lightGray)
     }
+    
     
     /// ---> Setter for values on UI <--- ///
     override func setDetailsValues(_ object: MovieDetailsObject) {

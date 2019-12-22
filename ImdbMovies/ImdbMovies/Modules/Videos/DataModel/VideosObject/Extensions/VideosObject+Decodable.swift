@@ -11,7 +11,7 @@ import Foundation
 
 extension VideosObject: Decodable {
     
-    /// ---> Function decode all properties from json container <--- ///
+    /// ---> Function for decode all values from json container <--- ///
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: VideoCodingKeys.self)
         if let value = try values.decodeIfPresent(String.self, forKey: .objectId) {

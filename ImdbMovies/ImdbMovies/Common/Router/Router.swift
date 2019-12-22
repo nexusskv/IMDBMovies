@@ -12,7 +12,7 @@ import UIKit
 
 class Router {
 
-    /// ---> Function present some view controller from other view controller <--- ///
+    /// ---> Function for show some view controller from other view controller <--- ///
     static func present(_ vc: String, from parent: UIViewController) {
         let storyboard = UIStoryboard(name: vc, bundle: nil)
         let child = storyboard.instantiateViewController(withIdentifier: vc + "ViewController")
@@ -25,7 +25,7 @@ class Router {
     }
     
     
-    /// ---> Function remove some view controller from other view controller <--- ///
+    /// ---> Function for close some view controller from other view controller <--- ///
     static func dismiss(_ vc: UIViewController) {
         let transition = makeTransition(.pop)
         vc.view.window!.layer.add(transition, forKey: kCATransition)

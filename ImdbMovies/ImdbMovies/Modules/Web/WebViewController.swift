@@ -23,12 +23,16 @@ class WebViewController: UIViewController {
         setupUI()
     }
     
+    
+    /// ---> View life cycle  <--- ///
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         loadContent()
     }
     
+    
+    /// ---> View life cycle  <--- ///
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         

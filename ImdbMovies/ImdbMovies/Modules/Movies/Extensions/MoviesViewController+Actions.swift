@@ -12,25 +12,31 @@ import UIKit
 
 extension MoviesViewController {
     
-    /// ---> Function for show sort view <--- ///
+    /// ---> Action for show sort view <--- ///
     @IBAction func sortItemTapped() {
         displaySortView()
     }
     
     
-    /// ---> Function for show details of movie <--- ///
+    /// ---> Action for show details of movie <--- ///
     @IBAction func movieButtonTapped(_ sender: UIButton) {
         presentDetails(sender.tag)
     }
     
     
-    /// ---> Actions for types of sort buttons  <--- ///
+    /// ---> Action for sort buttons  <--- ///
     @IBAction func sortMoviesButtonTapped(_ sender: UIButton) {
         sortActionHandler(sender.tag)
     }
     
     
-    /// ---> Function for ok/close buttons  <--- ///
+    /// ---> Actions for search item  <--- ///
+    @IBAction func searchItemTapped() {
+        searchItemHandler()
+    }
+    
+    
+    /// ---> Action for ok/cancel buttons  <--- ///
     @IBAction func confirmActionButtonTapped(_ sender: UIButton) {
         confirmActionHandler(sender.tag)
     }

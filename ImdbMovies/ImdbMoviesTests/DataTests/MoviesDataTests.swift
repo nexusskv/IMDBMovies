@@ -14,30 +14,39 @@ let testImageUrl    = "https://i.picsum.photos/id/237/200/300.jpg"
 
 class MoviesDataTests: XCTestCase {
     var viewController: MoviesViewController!
-           
+    
+    /// ---> Function for set test view controller <--- ///
     override func setUp() {
         let storyboard = UIStoryboard(name: "Movies", bundle: nil)
         viewController = storyboard.instantiateViewController(withIdentifier: "MoviesViewController") as? MoviesViewController
     }
-
+    
+    
+    /// ---> Function for destruct data <--- ///
     override func tearDown() {
         viewController  = nil
         
         super.tearDown()
     }
 
+    
+    /// ---> Function for test movie object <--- ///
     func testMovieObject() {
         let testObject = makeTestObject()
                 
         XCTAssertNotNil(testObject, "MovieObject is empty.")
     }
     
+    
+    /// ---> Function for test type of data array <--- ///
     func testTypeDataArray() {
         viewController.dataArray = [MovieObject]()
         
-        XCTAssertNotNil(viewController.dataArray, "Data array is empty.")
+        XCTAssertNotNil(viewController.dataArray, "Data array have other type.")
     }
     
+    
+    /// ---> Function for check data array <--- ///
     func testDataArray() {
         let testObject = makeTestObject()
         
@@ -46,6 +55,8 @@ class MoviesDataTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(viewController.dataArray.count, 0, "Data array is empty.")
     }
     
+    
+    /// ---> Function for make test object <--- ///
     func makeTestObject() -> MovieObject {
         return MovieObject(objectId: 1,
                            voteCount: 5,

@@ -18,7 +18,8 @@ extension MovieDetailsViewController {
 
         cellTypes = DetailsTableCells.getCellTypes()
     }
-        
+     
+    
     /// ---> Function for make custom cells based on index of row  <--- ///
     func makeCell(_ sender: UITableView, at index: IndexPath) -> UITableViewCell {
         if let object = detailsObject {
@@ -52,6 +53,7 @@ extension MovieDetailsViewController {
         
         return 0
     }
+    
     
     /// ---> Function for present details view  <--- ///
     func presentDetails(_ index: Int) {

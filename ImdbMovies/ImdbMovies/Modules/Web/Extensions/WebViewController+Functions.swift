@@ -16,20 +16,21 @@ extension WebViewController {
         webView.navigationDelegate = self
     }
     
+    
     /// ---> Function for load content to web view  <--- ///
     func loadContent() {
         activityIndicator.startAnimating()
         
-        if let object = DataContainer.shared.videoObject { // Load Video
+        if let object = DataContainer.shared.videoObject {          // Load Video
             titleItem.title = "Video"
             
-            if let request = UrlBuilder.makeContentRequest(object.videoKey, type: object.videoType) {
+            if let request = RequestBuilder.makeContentRequest(object.videoKey, type: object.videoType) {
                 webView.load(request)
             }
-        } else if let page = DataContainer.shared.homepageUrl {
+        } else if let page = DataContainer.shared.homepageUrl {     // Load the home page of movie
             titleItem.title = "Home page"
             
-            if let request = UrlBuilder.makeContentRequest(page, type: .homepage) {
+            if let request = RequestBuilder.makeContentRequest(page, type: .homepage) {
                 webView.load(request)
             }
         }

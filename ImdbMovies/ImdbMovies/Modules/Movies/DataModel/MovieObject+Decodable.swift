@@ -11,7 +11,7 @@ import Foundation
 
 extension MovieObject: Decodable {
     
-    /// ---> Function decode all properties from json container <--- ///
+    /// ---> Function for decode all values from json container <--- ///
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: MoviesCodingKeys.self)
         if let value = try values.decodeIfPresent(Int.self, forKey: .objectId) {

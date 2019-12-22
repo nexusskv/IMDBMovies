@@ -33,10 +33,18 @@ class StarsView: UIView {
     var maxAllowedRating: Float!
     var starViews = [UIImageView]()
 
-    /// ---> Constructer function <--- ///
+    /// ---> Constructor function <--- ///
     required init?(coder aDecoder: NSCoder) {
-      super.init(coder: aDecoder)
-
+        super.init(coder: aDecoder)
+        
+    }
+    
+    
+    /// ---> Constructor function <--- ///
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupUI()
     }
     
     
@@ -46,17 +54,12 @@ class StarsView: UIView {
         
         setupUI()
     }
-    
-    
-    override init(frame: CGRect) {
-         super.init(frame: frame)
-        
-         setupUI()
-    }
 
+    
+    /// ---> Function for layout all subviews <--- ///
     override func layoutSubviews() {
-         super.layoutSubviews()
-
+        super.layoutSubviews()
+        
         let middle: CGFloat    = CGFloat(midMargin) * CGFloat(starViews.count)
         let left: CGFloat      = CGFloat(leftMargin * 2.0)
         let width: CGFloat     = CGFloat(self.frame.size.width)

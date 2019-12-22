@@ -12,6 +12,7 @@ import UIKit
 
 extension StarsView {
     
+    /// ---> Function for set max rating <--- ///
     func setMaxRating(_ value: Int) {
         if maxAllowedRating == Float(maxRating) {
             maxAllowedRating = Float(maxRating)
@@ -35,6 +36,7 @@ extension StarsView {
     }
 
     
+    /// ---> Function for set rating <--- ///
     func setRating(_ value: Float) {
         rating = value
         
