@@ -14,12 +14,17 @@ class VideosViewController: UIViewController {
     @IBOutlet weak var videosTable: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var dataArray: [VideosObject] = []
-            
+    var viewModel: VideosViewModel!
+    var endpointsManager: VideosEndpointsManager!
+    
     /// ---> View life cycle  <--- ///
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        viewModel           =  VideosViewModel()
+        endpointsManager    =  VideosEndpointsManager()
+        
+        viewModel.setupUI(self)
     }
 
     
@@ -27,6 +32,6 @@ class VideosViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        loadVideos()
+        endpointsManager.loadVideos(self)
     }
 }
