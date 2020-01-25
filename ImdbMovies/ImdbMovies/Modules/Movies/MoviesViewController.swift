@@ -16,6 +16,10 @@ class MoviesViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var sortView: SortView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var viewModel: MoviesViewModel!
+    var sortManager: SortManager!
+    var searchManager: SearchManager!
+    var endpointsManager: EndpointsManager!
     var dataArray: [MovieObject] = []
     var originalDataArray: [MovieObject] = []    
     var currentPage = 1
@@ -27,8 +31,13 @@ class MoviesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        viewModel           = MoviesViewModel()
+        sortManager         = SortManager()
+        searchManager       = SearchManager()
+        endpointsManager    =  EndpointsManager()
         
-        loadMovies(currentPage)
+        viewModel.setupUI(self)
+        
+        endpointsManager.loadMovies(self, page: currentPage)
     }
 }

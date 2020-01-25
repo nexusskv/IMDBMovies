@@ -20,7 +20,7 @@ extension MoviesViewController: UICollectionViewDataSource {
     
     /// ---> Fucntion of collection view data source protocol <--- ///
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = makeCell(collectionView, at: indexPath)
+        let cell = viewModel.makeCell(collectionView, array: dataArray, index: indexPath)
                
         return cell
     }
@@ -28,6 +28,6 @@ extension MoviesViewController: UICollectionViewDataSource {
     
     /// ---> Fucntion of collection view data source protocol <--- ///
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        loadNextPage(indexPath.row)
+        viewModel.loadNextPage(self, index: indexPath.row)
     }
 }

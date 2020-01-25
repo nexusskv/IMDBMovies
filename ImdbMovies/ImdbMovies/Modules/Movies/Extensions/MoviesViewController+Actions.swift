@@ -14,30 +14,30 @@ extension MoviesViewController {
     
     /// ---> Action for show sort view <--- ///
     @IBAction func sortItemTapped() {
-        displaySortView()
+        sortManager.displaySortView(self)
     }
     
     
     /// ---> Action for show details of movie <--- ///
     @IBAction func movieButtonTapped(_ sender: UIButton) {
-        presentDetails(sender.tag)
+        viewModel.presentDetails(self, index: sender.tag)
     }
     
     
     /// ---> Action for sort buttons  <--- ///
     @IBAction func sortMoviesButtonTapped(_ sender: UIButton) {
-        sortActionHandler(sender.tag)
+        sortManager.sortActionHandler(self, value: sender.tag)
     }
     
     
     /// ---> Actions for search item  <--- ///
     @IBAction func searchItemTapped() {
-        searchItemHandler()
+        searchManager.searchItemHandler(self)
     }
     
     
     /// ---> Action for ok/cancel buttons  <--- ///
     @IBAction func confirmActionButtonTapped(_ sender: UIButton) {
-        confirmActionHandler(sender.tag)
+        sortManager.confirmActionHandler(self, value: sender.tag)
     }
 }

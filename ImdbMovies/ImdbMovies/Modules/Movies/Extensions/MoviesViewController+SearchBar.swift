@@ -20,18 +20,24 @@ extension MoviesViewController: UISearchBarDelegate {
     
     /// ---> Fucntion of search bar delegate protocol <--- ///
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        handleSearchCancel(searchBar)
+        if let manager = searchManager {
+            manager.handleSearchCancel(self, bar: searchBar)
+        }
     }
     
     
     /// ---> Fucntion of search bar delegate protocol <--- ///
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {        
-        handleSearch(searchBar)
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let manager = searchManager {
+            manager.handleSearch(self, bar: searchBar)
+        }
     }
     
     
     /// ---> Fucntion of search bar delegate protocol <--- ///
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        handleSearchText(searchText, at: searchBar)
+        if let manager = searchManager {
+            manager.handleSearchText(self, text: searchText, at: searchBar)
+        }
     }
 }
