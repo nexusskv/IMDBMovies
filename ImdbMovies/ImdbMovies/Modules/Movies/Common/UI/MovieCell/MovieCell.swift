@@ -16,12 +16,15 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var ratingView: StarsView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var movieButton: UIButton!
+    var viewModel: MovieCellViewModel!
     
     /// ---> View life cycle <--- ///
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupUI()
+        viewModel = MovieCellViewModel()
+        
+        viewModel.setupUI(self)
     }
 
     

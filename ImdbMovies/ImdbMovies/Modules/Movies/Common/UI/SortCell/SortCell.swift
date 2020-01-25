@@ -13,4 +13,12 @@ import UIKit
 class SortCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var sortButton: UIButton!
+    var viewModel: SortCellViewModel!
+    
+    /// ---> View life cycle <--- ///
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        viewModel = SortCellViewModel()
+    }
 }

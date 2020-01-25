@@ -25,7 +25,9 @@ class MoviesViewModel {
         if let cell = sender.dequeueReusableCell(withReuseIdentifier: "MovieCell", for: index) as? MovieCell {
             let movie = array[index.item]
 
-            cell.setValues(movie, index: index.item)
+            if let model = cell.viewModel {
+                model.setValues(cell, object: movie, index: index.item)
+            }
             
             return cell
         }

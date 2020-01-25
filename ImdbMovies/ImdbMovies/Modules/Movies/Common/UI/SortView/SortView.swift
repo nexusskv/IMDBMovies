@@ -16,12 +16,15 @@ class SortView: UIView {
     @IBOutlet weak var cancelButton: UIButton!
     var titlesArray: [String] = []
     var currentSort: MoviesSortTypes = .none
+    var viewModel: SortViewModel!
     
     /// ---> View life cycle <--- ///
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        setupUI()
+        viewModel = SortViewModel()
+        
+        viewModel.setupUI(self)
     }
 
 }
