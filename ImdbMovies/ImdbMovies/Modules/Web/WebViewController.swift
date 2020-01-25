@@ -15,12 +15,15 @@ class WebViewController: UIViewController {
     @IBOutlet weak var titleItem: UINavigationItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var webView: WKWebView!
+    var viewModel: WebViewModel!
     
     /// ---> View life cycle  <--- ///
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        viewModel = WebViewModel()
+        
+        viewModel.setupUI(self)
     }
     
     
@@ -28,7 +31,7 @@ class WebViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        loadContent()
+        viewModel.loadContent(self)
     }
     
     

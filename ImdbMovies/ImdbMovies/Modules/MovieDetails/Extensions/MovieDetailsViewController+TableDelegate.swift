@@ -14,7 +14,7 @@ extension MovieDetailsViewController: UITableViewDelegate {
     
     /// ---> Function of table view delegate protocol <--- ///
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return makeHeight(indexPath.row)
+        return viewModel.makeHeight(self, index: indexPath.row)
     }
     
     
@@ -22,6 +22,6 @@ extension MovieDetailsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        presentDetails(indexPath.row)
+        viewModel.presentDetails(self, index: indexPath.row)
     }
 }

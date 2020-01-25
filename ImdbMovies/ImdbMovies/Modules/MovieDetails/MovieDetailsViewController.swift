@@ -15,12 +15,17 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var detailsObject: MovieDetailsObject!
     var cellTypes = [DetailsTableCells]()    
-            
+    var viewModel: DetailsViewModel!
+    var endpointsManager: DetailsEndpointsManager!
+    
     /// ---> View life cycle  <--- ///
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
+        viewModel           = DetailsViewModel()
+        endpointsManager    = DetailsEndpointsManager()
+        
+        viewModel.setupUI(self)
     }
 
     
@@ -28,6 +33,6 @@ class MovieDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        loadMovieDetails()
+        endpointsManager.loadMovieDetails(self)
     }
 }
